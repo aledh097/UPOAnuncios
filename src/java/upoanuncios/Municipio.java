@@ -1,5 +1,5 @@
 package upoanuncios;
-// Generated 22-abr-2020 1:58:43 by Hibernate Tools 4.3.1
+// Generated 22-abr-2020 4:23:42 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,8 @@ public class Municipio  implements java.io.Serializable {
 
      private String codPostal;
      private String nombreMunicipio;
-     private Set anuncios = new HashSet(0);
+     private Set anunciosForFkNombreMunicipio = new HashSet(0);
+     private Set anunciosForFkNombreMunicipio_1 = new HashSet(0);
 
     public Municipio() {
     }
@@ -23,10 +24,11 @@ public class Municipio  implements java.io.Serializable {
         this.codPostal = codPostal;
         this.nombreMunicipio = nombreMunicipio;
     }
-    public Municipio(String codPostal, String nombreMunicipio, Set anuncios) {
+    public Municipio(String codPostal, String nombreMunicipio, Set anunciosForFkNombreMunicipio, Set anunciosForFkNombreMunicipio_1) {
        this.codPostal = codPostal;
        this.nombreMunicipio = nombreMunicipio;
-       this.anuncios = anuncios;
+       this.anunciosForFkNombreMunicipio = anunciosForFkNombreMunicipio;
+       this.anunciosForFkNombreMunicipio_1 = anunciosForFkNombreMunicipio_1;
     }
    
     public String getCodPostal() {
@@ -43,12 +45,19 @@ public class Municipio  implements java.io.Serializable {
     public void setNombreMunicipio(String nombreMunicipio) {
         this.nombreMunicipio = nombreMunicipio;
     }
-    public Set getAnuncios() {
-        return this.anuncios;
+    public Set getAnunciosForFkNombreMunicipio() {
+        return this.anunciosForFkNombreMunicipio;
     }
     
-    public void setAnuncios(Set anuncios) {
-        this.anuncios = anuncios;
+    public void setAnunciosForFkNombreMunicipio(Set anunciosForFkNombreMunicipio) {
+        this.anunciosForFkNombreMunicipio = anunciosForFkNombreMunicipio;
+    }
+    public Set getAnunciosForFkNombreMunicipio_1() {
+        return this.anunciosForFkNombreMunicipio_1;
+    }
+    
+    public void setAnunciosForFkNombreMunicipio_1(Set anunciosForFkNombreMunicipio_1) {
+        this.anunciosForFkNombreMunicipio_1 = anunciosForFkNombreMunicipio_1;
     }
 
 

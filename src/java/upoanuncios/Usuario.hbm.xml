@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 22-abr-2020 1:58:44 by Hibernate Tools 4.3.1 -->
+<!-- Generated 22-abr-2020 4:23:43 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="upoanuncios.Usuario" table="usuario" catalog="upoanuncios" optimistic-lock="version">
         <id name="idUsuario" type="java.lang.Integer">
@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <many-to-one name="rol" class="upoanuncios.Rol" fetch="select">
-            <column name="FK_nombreRol" not-null="true" />
+            <column name="FK_idRol" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">
             <column name="nombre" length="20" not-null="true" />
@@ -29,23 +29,5 @@
         <property name="fechaAlta" type="timestamp">
             <column name="fechaAlta" length="19" not-null="true" />
         </property>
-        <set name="mensajesForFkIdUsuarioDestino" table="mensaje" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="FK_idUsuarioDestino" not-null="true" />
-            </key>
-            <one-to-many class="upoanuncios.Mensaje" />
-        </set>
-        <set name="mensajesForFkIdUsuarioOrigen" table="mensaje" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="FK_idUsuarioOrigen" not-null="true" />
-            </key>
-            <one-to-many class="upoanuncios.Mensaje" />
-        </set>
-        <set name="anuncios" table="anuncio" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="FK_idUsuario" not-null="true" />
-            </key>
-            <one-to-many class="upoanuncios.Anuncio" />
-        </set>
     </class>
 </hibernate-mapping>

@@ -1,5 +1,5 @@
 package upoanuncios;
-// Generated 22-abr-2020 1:58:43 by Hibernate Tools 4.3.1
+// Generated 22-abr-2020 4:23:42 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -15,7 +15,8 @@ public class Anuncio  implements java.io.Serializable {
      private Integer idAnuncio;
      private Categoria categoria;
      private Fotos fotos;
-     private Municipio municipio;
+     private Municipio municipioByFkNombreMunicipio;
+     private Municipio municipioByFkNombreMunicipio_1;
      private Subcategoria subcategoria;
      private Tipoanuncio tipoanuncio;
      private Usuario usuario;
@@ -30,18 +31,20 @@ public class Anuncio  implements java.io.Serializable {
     }
 
 	
-    public Anuncio(Categoria categoria, Fotos fotos, Municipio municipio, Subcategoria subcategoria, Tipoanuncio tipoanuncio, Usuario usuario) {
+    public Anuncio(Categoria categoria, Fotos fotos, Municipio municipioByFkNombreMunicipio, Municipio municipioByFkNombreMunicipio_1, Subcategoria subcategoria, Tipoanuncio tipoanuncio, Usuario usuario) {
         this.categoria = categoria;
         this.fotos = fotos;
-        this.municipio = municipio;
+        this.municipioByFkNombreMunicipio = municipioByFkNombreMunicipio;
+        this.municipioByFkNombreMunicipio_1 = municipioByFkNombreMunicipio_1;
         this.subcategoria = subcategoria;
         this.tipoanuncio = tipoanuncio;
         this.usuario = usuario;
     }
-    public Anuncio(Categoria categoria, Fotos fotos, Municipio municipio, Subcategoria subcategoria, Tipoanuncio tipoanuncio, Usuario usuario, String titulo, String descripcion, Float precio, Date fechaCreacion, Set mensajes, Set sorteos) {
+    public Anuncio(Categoria categoria, Fotos fotos, Municipio municipioByFkNombreMunicipio, Municipio municipioByFkNombreMunicipio_1, Subcategoria subcategoria, Tipoanuncio tipoanuncio, Usuario usuario, String titulo, String descripcion, Float precio, Date fechaCreacion, Set mensajes, Set sorteos) {
        this.categoria = categoria;
        this.fotos = fotos;
-       this.municipio = municipio;
+       this.municipioByFkNombreMunicipio = municipioByFkNombreMunicipio;
+       this.municipioByFkNombreMunicipio_1 = municipioByFkNombreMunicipio_1;
        this.subcategoria = subcategoria;
        this.tipoanuncio = tipoanuncio;
        this.usuario = usuario;
@@ -74,12 +77,19 @@ public class Anuncio  implements java.io.Serializable {
     public void setFotos(Fotos fotos) {
         this.fotos = fotos;
     }
-    public Municipio getMunicipio() {
-        return this.municipio;
+    public Municipio getMunicipioByFkNombreMunicipio() {
+        return this.municipioByFkNombreMunicipio;
     }
     
-    public void setMunicipio(Municipio municipio) {
-        this.municipio = municipio;
+    public void setMunicipioByFkNombreMunicipio(Municipio municipioByFkNombreMunicipio) {
+        this.municipioByFkNombreMunicipio = municipioByFkNombreMunicipio;
+    }
+    public Municipio getMunicipioByFkNombreMunicipio_1() {
+        return this.municipioByFkNombreMunicipio_1;
+    }
+    
+    public void setMunicipioByFkNombreMunicipio_1(Municipio municipioByFkNombreMunicipio_1) {
+        this.municipioByFkNombreMunicipio_1 = municipioByFkNombreMunicipio_1;
     }
     public Subcategoria getSubcategoria() {
         return this.subcategoria;

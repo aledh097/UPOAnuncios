@@ -1,5 +1,5 @@
 package upoanuncios;
-// Generated 22-abr-2020 1:58:43 by Hibernate Tools 4.3.1
+// Generated 22-abr-2020 4:23:42 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

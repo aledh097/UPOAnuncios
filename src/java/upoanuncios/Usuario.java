@@ -1,5 +1,5 @@
 package upoanuncios;
-// Generated 22-abr-2020 1:58:43 by Hibernate Tools 4.3.1
+// Generated 22-abr-2020 4:23:42 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -20,9 +20,6 @@ public class Usuario  implements java.io.Serializable {
      private String correoElectronico;
      private String contrasenya;
      private Date fechaAlta;
-     private Set mensajesForFkIdUsuarioDestino = new HashSet(0);
-     private Set mensajesForFkIdUsuarioOrigen = new HashSet(0);
-     private Set anuncios = new HashSet(0);
 
     public Usuario() {
     }
@@ -45,9 +42,6 @@ public class Usuario  implements java.io.Serializable {
        this.correoElectronico = correoElectronico;
        this.contrasenya = contrasenya;
        this.fechaAlta = fechaAlta;
-       this.mensajesForFkIdUsuarioDestino = mensajesForFkIdUsuarioDestino;
-       this.mensajesForFkIdUsuarioOrigen = mensajesForFkIdUsuarioOrigen;
-       this.anuncios = anuncios;
     }
    
     public Integer getIdUsuario() {
@@ -106,31 +100,5 @@ public class Usuario  implements java.io.Serializable {
     public void setFechaAlta(Date fechaAlta) {
         this.fechaAlta = fechaAlta;
     }
-    public Set getMensajesForFkIdUsuarioDestino() {
-        return this.mensajesForFkIdUsuarioDestino;
-    }
-    
-    public void setMensajesForFkIdUsuarioDestino(Set mensajesForFkIdUsuarioDestino) {
-        this.mensajesForFkIdUsuarioDestino = mensajesForFkIdUsuarioDestino;
-    }
-    public Set getMensajesForFkIdUsuarioOrigen() {
-        return this.mensajesForFkIdUsuarioOrigen;
-    }
-    
-    public void setMensajesForFkIdUsuarioOrigen(Set mensajesForFkIdUsuarioOrigen) {
-        this.mensajesForFkIdUsuarioOrigen = mensajesForFkIdUsuarioOrigen;
-    }
-    public Set getAnuncios() {
-        return this.anuncios;
-    }
-    
-    public void setAnuncios(Set anuncios) {
-        this.anuncios = anuncios;
-    }
-
-
-
 
 }
-
-
