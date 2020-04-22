@@ -31,7 +31,7 @@ public class usuariosDAO {
     public Rol rolCliente(){
         sesion = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = sesion.beginTransaction();
-        Query q = sesion.createQuery("From Rol where nombre='Cliente'");
+        Query q = sesion.createQuery("From Rol where nombreRol='Cliente'");
         Rol r = (Rol) q.uniqueResult();
         tx.commit();
         return r;

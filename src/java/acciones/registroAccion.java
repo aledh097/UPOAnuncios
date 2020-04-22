@@ -96,7 +96,8 @@ public class registroAccion extends ActionSupport {
     public String execute() throws Exception {
         try {
             Rol r = new usuariosDAO().rolCliente();
-            Usuario u = new Usuario(r, getNombre(), getApellidos(), getTelefono(), getCorreoElectronico(), getContrasenya(), null);
+            Date d = new Date();
+            Usuario u = new Usuario(r, getNombre(), getApellidos(), getTelefono(), getCorreoElectronico(), getContrasenya(), d);
             new usuariosDAO().altaUsuario(u);
             return SUCCESS;
         } catch (Exception e) {

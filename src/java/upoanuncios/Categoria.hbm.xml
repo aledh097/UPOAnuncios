@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 22-abr-2020 18:24:59 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="upoanuncios.Categoria" table="categoria" catalog="upoanuncios" optimistic-lock="version">
+        <id name="idCategoria" type="java.lang.Integer">
+            <column name="idCategoria" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreCategoria" type="string">
+            <column name="nombreCategoria" length="32" not-null="true" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>
