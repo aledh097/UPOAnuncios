@@ -13,8 +13,8 @@
     </package>
     
     <package name="defecto" extends="struts-default">
-        <action name="AccionDefecto">
-            <result>/registro.jsp</result>
+        <action name="AccionDefecto" class="acciones.listarAnunciosAccion">
+            <result>/listarAnuncios.jsp</result>
         </action>
         
         <action name="comprobarLogin" class="acciones.loginAccion">
