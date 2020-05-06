@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-may-2020 5:30:18 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="upoanuncios.Publicidad" table="publicidad" catalog="upoanuncios" optimistic-lock="version">
+        <id name="idPublicidad" type="java.lang.Integer">
+            <column name="idPublicidad" />
+            <generator class="identity" />
+        </id>
+        <property name="titulo" type="int">
+            <column name="titulo" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="150" not-null="true" />
+        </property>
+        <property name="banner" type="string">
+            <column name="banner" length="32" not-null="true" />
+        </property>
+        <property name="fkIdCategoria" type="int">
+            <column name="FK_idCategoria" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

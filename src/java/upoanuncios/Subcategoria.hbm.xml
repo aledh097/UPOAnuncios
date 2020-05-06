@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-may-2020 5:30:18 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="upoanuncios.Subcategoria" table="subcategoria" catalog="upoanuncios" optimistic-lock="version">
+        <id name="idSubCateogoria" type="java.lang.Integer">
+            <column name="idSubCateogoria" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreSubCategoria" type="string">
+            <column name="nombreSubCategoria" length="32" not-null="true" />
+        </property>
+        <property name="fkIdCategoria" type="string">
+            <column name="FK_idCategoria" length="32" not-null="true" />
+        </property>
+        <set name="anuncios" table="anuncio" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FK_idSubCategoria" not-null="true" />
+            </key>
+            <one-to-many class="upoanuncios.Anuncio" />
+        </set>
+    </class>
+</hibernate-mapping>

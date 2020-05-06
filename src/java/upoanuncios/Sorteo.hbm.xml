@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 06-may-2020 5:30:18 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="upoanuncios.Sorteo" table="sorteo" catalog="upoanuncios" optimistic-lock="version">
+        <id name="idSorteo" type="java.lang.Integer">
+            <column name="idSorteo" />
+            <generator class="identity" />
+        </id>
+        <property name="fkIdAnuncioGanador" type="int">
+            <column name="FK_idAnuncioGanador" not-null="true" />
+        </property>
+        <property name="fkIdPremio" type="int">
+            <column name="FK_idPremio" not-null="true" />
+        </property>
+        <property name="fechaSorteo" type="date">
+            <column name="fechaSorteo" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
