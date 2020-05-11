@@ -120,7 +120,8 @@ public class anunciosAccion extends ActionSupport {
             Categoria c = new categoriasDAO().searchById(getFkIdCategoria());
             Tipoanuncio t = new tiposanuncioDAO().searchById(getFkIdTipoAnuncio());
             Municipio m = new municipiosDAO().searchByCodPostal(getFkCodPostal());
-            Anuncio anuncio = new Anuncio(c, m, t, u, titulo, descripcion, precio, null);
+            Date date = new Date();
+            Anuncio anuncio = new Anuncio(c, m, t, u, titulo, descripcion, precio, date);
             new anunciosDAO().altaAnuncio(anuncio);
             return SUCCESS;
         } catch (Exception e) {
