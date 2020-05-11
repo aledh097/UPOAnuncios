@@ -13,20 +13,36 @@
     </package>
     
     <package name="defecto" extends="struts-default">
-        <action name="AccionDefecto" class="acciones.listarAnunciosAccion">
-            <result>/listarAnuncios.jsp</result>
+        <action name="AccionDefecto">
+            <result>/login.jsp</result>
         </action>
         
         <action name="comprobarLogin" class="acciones.loginAccion">
-            <result name="success">/logueoCorrecto.jsp</result>
+            <result type="redirectAction">listarAnuncios</result>
             <result name="error">/login.jsp</result>
+        </action>
+        
+        <action name="listarAnuncios" class="acciones.anunciosAccion">
+            <result name="success">/admin_listarAnuncios.jsp</result>
+            <result name="error">/error.jsp</result>
         </action>
         
         <action name="registrarUsuario" class="acciones.registroAccion">
             <result name="success">/registroCompletado.jsp</result>
-            <result name="error">/registro.jsp</result>
+            <result name="error">/error.jsp</result>
         </action>
         
+        <action name="irAltaAnuncio" class="acciones.cargarDatosAccion" method="datosAltaAnuncio">
+            <result name="success">/alta_Anuncio.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
+                
+        <action name="altaAnuncio" class="acciones.anunciosAccion" method="altaAnuncio">
+            <result name="success" type="redirectAction">listarAnuncios</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/alta_Anuncio.jsp</result>
+        </action>
     </package>
     
 

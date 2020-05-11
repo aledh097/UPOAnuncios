@@ -6,17 +6,26 @@
 package acciones;
 
 import DAO.anunciosDAO;
+import DAO.categoriasDAO;
+import DAO.municipiosDAO;
+import DAO.tiposanuncioDAO;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import upoanuncios.Anuncio;
+import upoanuncios.Categoria;
+import upoanuncios.Municipio;
+import upoanuncios.Tipoanuncio;
+import upoanuncios.Usuario;
 
 /**
  *
  * @author Alex
  */
-public class listarAnunciosAccion extends ActionSupport {
+public class anunciosAccion extends ActionSupport {
 
     private List<Anuncio> anuncios = new ArrayList<>();
     private Integer idAnuncio;
@@ -24,12 +33,10 @@ public class listarAnunciosAccion extends ActionSupport {
     private String descripcion;
     private Float precio;
     private Date fechaCreacion;
+    
     private int fkCodPostal;
     private int fkIdTipoAnuncio;
     private int fkIdCategoria;
-    private int fkIdSubCategoria;
-    private int fkIdFotos;
-    private int fkIdUsuario;
 
     public List<Anuncio> getAnuncios() {
         return anuncios;
@@ -102,34 +109,23 @@ public class listarAnunciosAccion extends ActionSupport {
     public void setFkIdCategoria(int fkIdCategoria) {
         this.fkIdCategoria = fkIdCategoria;
     }
-
-    public int getFkIdSubCategoria() {
-        return fkIdSubCategoria;
-    }
-
-    public void setFkIdSubCategoria(int fkIdSubCategoria) {
-        this.fkIdSubCategoria = fkIdSubCategoria;
-    }
-
-    public int getFkIdFotos() {
-        return fkIdFotos;
-    }
-
-    public void setFkIdFotos(int fkIdFotos) {
-        this.fkIdFotos = fkIdFotos;
-    }
-
-    public int getFkIdUsuario() {
-        return fkIdUsuario;
-    }
-
-    public void setFkIdUsuario(int fkIdUsuario) {
-        this.fkIdUsuario = fkIdUsuario;
-    }
-   
-
     
-    public listarAnunciosAccion() {
+    public anunciosAccion() {
+    }
+    
+    public String altaAnuncio(){
+        try {
+            Map session = (Map) ActionContext.getContext().get("session");
+            Usuario u = (Usuario) session.get("usuario");
+            Categoria c = new categoriasDAO().searchById(getFkIdCategoria());
+            Tipoanuncio t = new tiposanuncioDAO().searchById(getFkIdTipoAnuncio());
+            Municipio m = new municipiosDAO().searchByCodPostal(getFkCodPostal());
+            Anuncio anuncio = new Anuncio(c, m, t, u, titulo, descripcion, precio, null);
+            new anunciosDAO().altaAnuncio(anuncio);
+            return SUCCESS;
+        } catch (Exception e) {
+            return ERROR;
+        }
     }
 
     public String execute() throws Exception {

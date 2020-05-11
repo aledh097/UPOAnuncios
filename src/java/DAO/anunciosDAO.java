@@ -27,4 +27,12 @@ public class anunciosDAO {
         tx.commit();
         return la;
     }
+
+    public void altaAnuncio(Anuncio a) {
+        sesion = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = sesion.beginTransaction();
+        sesion.save(a);
+        tx.commit();
+    }
+
 }

@@ -49,17 +49,15 @@ Contributor(s):
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
-    <mapping resource="upoanuncios/Subcategoria.hbm.xml"/>
     <mapping resource="upoanuncios/Mensaje.hbm.xml"/>
-    <mapping resource="upoanuncios/Categoria.hbm.xml"/>
-    <mapping resource="upoanuncios/Rol.hbm.xml"/>
-    <mapping resource="upoanuncios/Municipio.hbm.xml"/>
-    <mapping resource="upoanuncios/Fotos.hbm.xml"/>
     <mapping resource="upoanuncios/Tipoanuncio.hbm.xml"/>
     <mapping resource="upoanuncios/Premio.hbm.xml"/>
+    <mapping resource="upoanuncios/Categoria.hbm.xml"/>
     <mapping resource="upoanuncios/Anuncio.hbm.xml"/>
     <mapping resource="upoanuncios/Usuario.hbm.xml"/>
+    <mapping resource="upoanuncios/Rol.hbm.xml"/>
     <mapping resource="upoanuncios/Publicidad.hbm.xml"/>
     <mapping resource="upoanuncios/Sorteo.hbm.xml"/>
+    <mapping resource="upoanuncios/Municipio.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

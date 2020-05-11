@@ -1,5 +1,5 @@
 package upoanuncios;
-// Generated 06-may-2020 5:30:17 by Hibernate Tools 4.3.1
+// Generated 11-may-2020 4:09:43 by Hibernate Tools 4.3.1
 
 
 

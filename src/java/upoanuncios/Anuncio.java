@@ -1,5 +1,5 @@
 package upoanuncios;
-// Generated 06-may-2020 5:30:17 by Hibernate Tools 4.3.1
+// Generated 11-may-2020 4:09:43 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,9 +12,7 @@ public class Anuncio  implements java.io.Serializable {
 
      private Integer idAnuncio;
      private Categoria categoria;
-     private Fotos fotos;
      private Municipio municipio;
-     private Subcategoria subcategoria;
      private Tipoanuncio tipoanuncio;
      private Usuario usuario;
      private String titulo;
@@ -26,19 +24,15 @@ public class Anuncio  implements java.io.Serializable {
     }
 
 	
-    public Anuncio(Categoria categoria, Fotos fotos, Municipio municipio, Subcategoria subcategoria, Tipoanuncio tipoanuncio, Usuario usuario) {
+    public Anuncio(Categoria categoria, Municipio municipio, Tipoanuncio tipoanuncio, Usuario usuario) {
         this.categoria = categoria;
-        this.fotos = fotos;
         this.municipio = municipio;
-        this.subcategoria = subcategoria;
         this.tipoanuncio = tipoanuncio;
         this.usuario = usuario;
     }
-    public Anuncio(Categoria categoria, Fotos fotos, Municipio municipio, Subcategoria subcategoria, Tipoanuncio tipoanuncio, Usuario usuario, String titulo, String descripcion, Float precio, Date fechaCreacion) {
+    public Anuncio(Categoria categoria, Municipio municipio, Tipoanuncio tipoanuncio, Usuario usuario, String titulo, String descripcion, Float precio, Date fechaCreacion) {
        this.categoria = categoria;
-       this.fotos = fotos;
        this.municipio = municipio;
-       this.subcategoria = subcategoria;
        this.tipoanuncio = tipoanuncio;
        this.usuario = usuario;
        this.titulo = titulo;
@@ -61,26 +55,12 @@ public class Anuncio  implements java.io.Serializable {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
-    public Fotos getFotos() {
-        return this.fotos;
-    }
-    
-    public void setFotos(Fotos fotos) {
-        this.fotos = fotos;
-    }
     public Municipio getMunicipio() {
         return this.municipio;
     }
     
     public void setMunicipio(Municipio municipio) {
         this.municipio = municipio;
-    }
-    public Subcategoria getSubcategoria() {
-        return this.subcategoria;
-    }
-    
-    public void setSubcategoria(Subcategoria subcategoria) {
-        this.subcategoria = subcategoria;
     }
     public Tipoanuncio getTipoanuncio() {
         return this.tipoanuncio;

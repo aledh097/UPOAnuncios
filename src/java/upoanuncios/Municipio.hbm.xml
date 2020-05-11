@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 06-may-2020 5:30:18 by Hibernate Tools 4.3.1 -->
+<!-- Generated 11-may-2020 4:09:44 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="upoanuncios.Municipio" table="municipio" catalog="upoanuncios" optimistic-lock="version">
         <id name="codPostal" type="string">
