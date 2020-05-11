@@ -22,6 +22,8 @@
                     <th>Tipo de anuncio</th>
                     <th>Categoría</th>
                     <th>Usuario</th>
+                    <th>Modificar</th>
+                    <th>Borrar</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +37,18 @@
                         <td><s:property value="%{tipoanuncio.nombreTipoAnuncio}"></s:property></td>
                         <td><s:property value="%{categoria.nombreCategoria}"></s:property></td>
                         <td><s:property value="%{usuario.nombre}"></s:property></td>
+                                                    <td>
+                                <s:form action="IrModificarAnuncio">
+                                    <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                                    <s:submit value="Modificar"></s:submit>
+                                </s:form>
+                            </td>
+                            <td>
+                                <s:form action="borrarAnuncio">
+                                    <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                                    <s:submit value="Borrar"></s:submit>
+                                </s:form>
+                            </td>
                         </tr>
                 </s:iterator>
 

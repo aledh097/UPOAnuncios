@@ -9,7 +9,7 @@
         <s:head></s:head>
         </head>
         <body>
-            <h1>Alta Anuncio</h1>
+            <h1>Modificar Anuncio</h1>
 
         <s:form action="altaAnuncio">
 
@@ -22,19 +22,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>    <s:textfield id="input_titulo" name="titulo" required="true" label="Título"></s:textfield>
+                        <td>    <s:textfield id="input_titulo" name="titulo" required="true" label="Título" value="%{#session.anuncio.titulo}"></s:textfield>
                             </td>
                         </tr>
                         <tr>
-                            <td>    <s:textarea id="input_descripcion" name="descripcion" required="true" label="Descripcion"></s:textarea>
+                            <td>    <s:textarea id="input_descripcion" name="descripcion" required="true" label="Descripcion" value="%{#session.anuncio.descripcion}"></s:textarea>
                             </td>
                         </tr>
                         <tr>
-                            <td>    <s:textfield id="input_precio" name="precio" required="true" type="number" label="Precio"></s:textfield>
+                            <td>    <s:textfield id="input_precio" name="precio" required="true" type="number" label="Precio" value="%{#session.anuncio.precio}"></s:textfield>
                             </td>
                         </tr>
                         <tr>
-                            <td>        <s:select id="fkIdCategoria" name="fkIdCategoria" required="true" list="#session.categorias" listValue="%{nombreCategoria}" listKey="idCategoria" label="Categoria"></s:select>
+                            <td>        <s:select id="fkIdCategoria" name="fkIdCategoria" required="true" list="#session.categorias" listValue="%{nombreCategoria}" listKey="idCategoria" value="%{#session.anuncio.idCategoria}" label="Categoria"></s:select>
                             </td>
                         </tr>
                         <tr>
@@ -46,7 +46,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2">       <s:submit value="Dar de alta"></s:submit></td>
+                            <td colspan="2">       <s:submit value="Modificar"></s:submit></td>
                         </tr>
                     </tbody>
                 </table>

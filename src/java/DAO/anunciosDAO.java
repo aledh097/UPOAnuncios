@@ -35,4 +35,22 @@ public class anunciosDAO {
         tx.commit();
     }
 
+    public void borrar(int id) {
+        Anuncio a = new Anuncio();
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.beginTransaction();
+        a = (Anuncio) session.createQuery("from Anuncio where idAnuncio='" + id + "'").uniqueResult();
+        session.delete(a);
+        tx.commit();
+    }
+    
+        public Anuncio searchById(int id){
+        Session sesion = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = sesion.beginTransaction();
+        Query q = sesion.createQuery("From Anuncio Where idAnuncio="+id);
+        Anuncio a = (Anuncio) q.uniqueResult();
+        tx.commit();
+        return a;
+    }
+
 }

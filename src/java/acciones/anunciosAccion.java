@@ -136,5 +136,26 @@ public class anunciosAccion extends ActionSupport {
             return ERROR;
         }
     }
+    
+    public String borrarAnuncio(){
+        try {
+            new anunciosDAO().borrar(getIdAnuncio());
+            return SUCCESS;
+        } catch (Exception e) {
+            return ERROR;
+        }
+    }
+    
+    public String modificarAnuncio(){
+        try {
+            Map session = (Map) ActionContext.getContext().get("session");
+            Anuncio a = new anunciosDAO().searchById(getIdAnuncio());
+            
+            session.put("anuncio", a);
+            return SUCCESS;
+        } catch (Exception e) {
+            return ERROR;
+        }
+    }
 
 }

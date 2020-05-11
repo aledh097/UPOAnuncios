@@ -29,7 +29,7 @@ public class cargarDatosAccion extends ActionSupport {
     public cargarDatosAccion() {
     }
     
-    public String datosAltaAnuncio(){
+    public String datosAnuncio(){
         try {
             
             Map session = (Map) ActionContext.getContext().get("session");

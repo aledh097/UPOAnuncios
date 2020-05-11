@@ -33,4 +33,6 @@ public class categoriasDAO {
         tx.commit();
         return c;
     }
+     
+
 }

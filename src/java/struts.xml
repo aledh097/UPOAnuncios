@@ -32,7 +32,7 @@
             <result name="error">/error.jsp</result>
         </action>
         
-        <action name="irAltaAnuncio" class="acciones.cargarDatosAccion" method="datosAltaAnuncio">
+        <action name="irAltaAnuncio" class="acciones.cargarDatosAccion" method="datosAnuncio">
             <result name="success">/alta_Anuncio.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
@@ -43,6 +43,20 @@
             <result name="error">/error.jsp</result>
             <result name="input">/alta_Anuncio.jsp</result>
         </action>
+        
+        <action name="borrarAnuncio" class="acciones.anunciosAccion" method="borrarAnuncio">
+            <result name="success" type="redirectAction">listarAnuncios</result>
+            <result name="error">/error.jsp</result>
+            <result name="input" type="redirectAction">listarAnuncios</result>
+        </action>
+        
+        <action name="IrModificarAnuncio" class="acciones.anunciosAccion" method="datosAnuncio">
+            <result name="success">mod_Anuncio.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">mod_Anuncio.jsp</result>
+        </action>
+        
+        
     </package>
     
 
