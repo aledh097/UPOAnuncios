@@ -17,27 +17,26 @@
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/usuariosDAO.java</file>
         </group>
         <group name="Group 20200422-06:55:42">
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/registroCompletado.jsp</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/alta_Anuncio.jsp</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/acciones/anunciosAccion.java</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/upoanuncios/Anuncio.java</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/META-INF/context.xml</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/struts.xml</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/upoanuncios/Municipio.hbm.xml</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/login.jsp</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/upoanuncios/Categoria.java</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/upoanuncios/Fotos.java</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/acciones/listarAnunciosAccion.java</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/acciones/cargarDatosAccion.java</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/error.jsp</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/municipiosDAO.java</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/tiposanuncioDAO.java</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/index.html</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/listarAnuncios.jsp</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/anunciosDAO.java</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/logueoCorrecto.jsp</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/upoanuncios/Municipio.java</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/registro.jsp</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/categoriasDAO.java</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/upoanuncios/Anuncio.hbm.xml</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/hibernate.cfg.xml</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/mod_Anuncio.jsp</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/HibernateUtil.java</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/hibernate.reveng.xml</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/acciones/loginAccion.java</file>
-            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/acciones/registroAccion.java</file>
+            <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/web/admin_listarAnuncios.jsp</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/usuariosDAO.java</file>
         </group>
     </open-files>
