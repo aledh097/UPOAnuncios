@@ -37,7 +37,7 @@ crossorigin="anonymous"></script>
 
                         </tr>
                         <tr>
-                        <s:textarea id="input_descripcion" name="descripcion" required="true" label="Descripcion"></s:textarea>
+                        <s:textarea id="input_descripcion" name="descripcion" required="true" label="Descripción"></s:textarea>
 
                         </tr>
                         <tr>

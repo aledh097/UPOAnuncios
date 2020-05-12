@@ -42,25 +42,28 @@ crossorigin="anonymous"></script>
 
                         </tr>
                         <tr>
-                        <s:textarea cols="50" rows="9" id="input_descripcion" name="descripcion" required="true" label="Descripcion" value="%{#session.anuncio.descripcion}"></s:textarea>
+                        <s:textarea cols="50" rows="9" id="input_descripcion" name="descripcion" required="true" label="Descripción" value="%{#session.anuncio.descripcion}"></s:textarea>
 
                         </tr>
                         <tr>
                         <s:textfield id="input_precio" name="precio" required="true" type="number" label="Precio" value="%{#session.anuncio.precio}"></s:textfield>
 
                         </tr>
+
                         <tr>
-                        <s:select id="fkIdCategoria" name="fkIdCategoria" required="true" list="#session.categorias" listValue="%{nombreCategoria}" listKey="idCategoria" value="%{#session.anuncio.categoria.idCategoria}" label="Categoria"></s:select>
+                        <s:select id="fkIdCategoria" name="fkIdCategoria" required="true" list="#session.categorias" listValue="%{nombreCategoria}" listKey="idCategoria" value="%{#session.anuncio.categoria.idCategoria}" label="Categoría"></s:select>
 
                         </tr>
                         <tr>
                         <s:select id="fkCodPostal" name="fkCodPostal" required="true" list="#session.municipios" listValue="%{nombreMunicipio}" listKey="codPostal" value="%{#session.anuncio.municipio.codPostal}" label="Municipio"></s:select>
 
                         </tr>
+
                         <tr>
-                        <s:select id="fkIdTipoAnuncio" name="fkIdTipoAnuncio" required="true" list="#session.tiposanuncio" listValue="%{nombreTipoAnuncio}" listKey="idTipoAnuncio" value="%{#session.anuncio.tipoanuncio.nombreTipoAnuncio}" label="Tipo de anuncio"></s:select>
+                        <s:select id="fkIdTipoAnuncio" name="fkIdTipoAnuncio" required="true" list="#session.tiposanuncio" listValue="%{nombreTipoAnuncio}" listKey="idTipoAnuncio" value="%{#session.anuncio.tipoanuncio.idTipoAnuncio}" label="Tipo de anuncio"></s:select>
 
                         </tr>
+
                         <tr>
                             <td colspan="2">       <s:submit value="Modificar"></s:submit></td>
                         </tr>
