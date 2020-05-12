@@ -33,7 +33,7 @@ public class anunciosAccion extends ActionSupport {
     private String descripcion;
     private Float precio;
     private Date fechaCreacion;
-    
+
     private int fkCodPostal;
     private int fkIdTipoAnuncio;
     private int fkIdCategoria;
@@ -109,11 +109,11 @@ public class anunciosAccion extends ActionSupport {
     public void setFkIdCategoria(int fkIdCategoria) {
         this.fkIdCategoria = fkIdCategoria;
     }
-    
+
     public anunciosAccion() {
     }
-    
-    public String altaAnuncio(){
+
+    public String modAnuncio() {
         try {
             Map session = (Map) ActionContext.getContext().get("session");
             Usuario u = (Usuario) session.get("usuario");
@@ -121,7 +121,26 @@ public class anunciosAccion extends ActionSupport {
             Tipoanuncio t = new tiposanuncioDAO().searchById(getFkIdTipoAnuncio());
             Municipio m = new municipiosDAO().searchByCodPostal(getFkCodPostal());
             Date date = new Date();
-            Anuncio anuncio = new Anuncio(c, m, t, u, titulo, descripcion, precio, date);
+            Anuncio anuncio = new Anuncio(c, m, t, u, getTitulo(), getDescripcion(), getPrecio(), date);
+            int identificador;
+            identificador = getIdAnuncio();
+            anuncio.setIdAnuncio(identificador);
+            new anunciosDAO().modAnuncio(anuncio);
+            return SUCCESS;
+        } catch (Exception e) {
+            return ERROR;
+        }
+    }
+
+    public String altaAnuncio() {
+        try {
+            Map session = (Map) ActionContext.getContext().get("session");
+            Usuario u = (Usuario) session.get("usuario");
+            Categoria c = new categoriasDAO().searchById(getFkIdCategoria());
+            Tipoanuncio t = new tiposanuncioDAO().searchById(getFkIdTipoAnuncio());
+            Municipio m = new municipiosDAO().searchByCodPostal(getFkCodPostal());
+            Date date = new Date();
+            Anuncio anuncio = new Anuncio(c, m, t, u, getTitulo(), getDescripcion(), getPrecio(), date);
             new anunciosDAO().altaAnuncio(anuncio);
             return SUCCESS;
         } catch (Exception e) {
@@ -137,8 +156,8 @@ public class anunciosAccion extends ActionSupport {
             return ERROR;
         }
     }
-    
-    public String borrarAnuncio(){
+
+    public String borrarAnuncio() {
         try {
             new anunciosDAO().borrar(getIdAnuncio());
             return SUCCESS;
@@ -146,13 +165,27 @@ public class anunciosAccion extends ActionSupport {
             return ERROR;
         }
     }
-    
-    public String modificarAnuncio(){
+
+    private List<Categoria> categorias;
+    private List<Tipoanuncio> tiposanuncio;
+    private List<Municipio> municipios;
+
+    public String datosAnuncioMod() {
         try {
+
             Map session = (Map) ActionContext.getContext().get("session");
+
+            categorias = new categoriasDAO().listadoCategorias();
+            tiposanuncio = new tiposanuncioDAO().listadoTiposAnuncio();
+            municipios = new municipiosDAO().listadoMunicipios();
+
+            session.put("categorias", categorias);
+            session.put("tiposanuncio", tiposanuncio);
+            session.put("municipios", municipios);
+
             Anuncio a = new anunciosDAO().searchById(getIdAnuncio());
-            
-            session.put("anuncio", a);
+            session.put("anuncio",a);
+
             return SUCCESS;
         } catch (Exception e) {
             return ERROR;

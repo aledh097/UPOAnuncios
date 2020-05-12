@@ -50,10 +50,16 @@
             <result name="input" type="redirectAction">listarAnuncios</result>
         </action>
         
-        <action name="IrModificarAnuncio" class="acciones.anunciosAccion" method="datosAnuncio">
+        <action name="IrModificarAnuncio" class="acciones.anunciosAccion" method="datosAnuncioMod">
             <result name="success">mod_Anuncio.jsp</result>
             <result name="error">/error.jsp</result>
             <result name="input">mod_Anuncio.jsp</result>
+        </action>
+        
+        <action name="modAnuncio" class="acciones.anunciosAccion" method="modAnuncio">
+            <result name="success" type="redirectAction">listarAnuncios</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/mod_Anuncio.jsp</result>
         </action>
         
         

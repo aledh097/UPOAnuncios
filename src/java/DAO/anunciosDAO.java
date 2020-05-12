@@ -34,6 +34,13 @@ public class anunciosDAO {
         sesion.save(a);
         tx.commit();
     }
+    
+    public void modAnuncio(Anuncio a) {
+        sesion = HibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = sesion.beginTransaction();
+        sesion.update(a);
+        tx.commit();
+    }
 
     public void borrar(int id) {
         Anuncio a = new Anuncio();
@@ -44,7 +51,7 @@ public class anunciosDAO {
         tx.commit();
     }
     
-        public Anuncio searchById(int id){
+     public Anuncio searchById(int id){
         Session sesion = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = sesion.beginTransaction();
         Query q = sesion.createQuery("From Anuncio Where idAnuncio="+id);
