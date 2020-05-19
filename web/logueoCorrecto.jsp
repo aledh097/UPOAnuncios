@@ -1,9 +1,3 @@
-<%-- 
-    Document   : logueoCorrecto
-    Created on : 22-abr-2020, 2:28:11
-    Author     : Alex
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

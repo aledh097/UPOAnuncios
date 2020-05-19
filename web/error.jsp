@@ -1,9 +1,3 @@
-<%-- 
-    Document   : error
-    Created on : 11-may-2020, 3:13:11
-    Author     : Alex
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

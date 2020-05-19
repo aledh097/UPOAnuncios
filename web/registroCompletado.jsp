@@ -1,9 +1,3 @@
-<%-- 
-    Document   : registroCompletado
-    Created on : 22-abr-2020, 4:38:47
-    Author     : Alex
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
