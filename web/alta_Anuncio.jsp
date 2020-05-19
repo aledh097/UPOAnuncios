@@ -45,7 +45,7 @@ crossorigin="anonymous"></script>
 
                         </tr>
                         <tr>
-                        <s:select id="fkIdCategoria" name="fkIdCategoria" required="true" list="#session.categorias" listValue="%{nombreCategoria}" listKey="idCategoria" label="Categoria"></s:select>
+                        <s:select id="fkIdCategoria" name="fkIdCategoria" required="true" list="#session.categorias" listValue="%{nombreCategoria}" listKey="idCategoria" label="Categoría"></s:select>
 
                         </tr>
                         <tr>
