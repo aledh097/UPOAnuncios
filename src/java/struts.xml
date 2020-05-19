@@ -27,6 +27,11 @@
             <result name="error">/error.jsp</result>
         </action>
         
+        <action name="listarCategorias" class="acciones.categoriasAccion">
+            <result name="success">/admin_listarCategorias.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
         <action name="registrarUsuario" class="acciones.registroAccion">
             <result name="success">/registroCompletado.jsp</result>
             <result name="error">/error.jsp</result>
@@ -36,12 +41,17 @@
             <result name="success">/alta_Anuncio.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
-        
-                
+            
         <action name="altaAnuncio" class="acciones.anunciosAccion" method="altaAnuncio">
             <result name="success" type="redirectAction">listarAnuncios</result>
             <result name="error">/error.jsp</result>
             <result name="input">/alta_Anuncio.jsp</result>
+        </action>
+        
+        <action name="altaCategoria" class="acciones.categoriasAccion" method="altaCategoria">
+            <result name="success" type="redirectAction">listarCategorias</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/alta_Categoria.jsp</result>
         </action>
         
         <action name="borrarAnuncio" class="acciones.anunciosAccion" method="borrarAnuncio">
@@ -50,10 +60,22 @@
             <result name="input" type="redirectAction">listarAnuncios</result>
         </action>
         
+        <action name="borrarCategoria" class="acciones.categoriasAccion" method="borrarCategoria">
+            <result name="success" type="redirectAction">listarCategorias</result>
+            <result name="error">/error.jsp</result>
+            <result name="input" type="redirectAction">listarCategorias</result>
+        </action>
+        
         <action name="IrModificarAnuncio" class="acciones.anunciosAccion" method="datosAnuncioMod">
             <result name="success">mod_Anuncio.jsp</result>
             <result name="error">/error.jsp</result>
             <result name="input">mod_Anuncio.jsp</result>
+        </action>
+        
+        <action name="IrModificarCategoria" class="acciones.categoriasAccion" method="datosCategoriaMod">
+            <result name="success">mod_Categoria.jsp</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">mod_Categoria.jsp</result>
         </action>
         
         <action name="modAnuncio" class="acciones.anunciosAccion" method="modAnuncio">
@@ -62,6 +84,11 @@
             <result name="input">/mod_Anuncio.jsp</result>
         </action>
         
+        <action name="modCategoria" class="acciones.categoriasAccion" method="modCategoria">
+            <result name="success" type="redirectAction">listarCategorias</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/mod_Categoria.jsp</result>
+        </action>
         
     </package>
     

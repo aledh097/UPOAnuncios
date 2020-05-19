@@ -24,6 +24,9 @@ crossorigin="anonymous"></script>
         <s:form action="irAltaAnuncio">
             <s:submit value="Alta anuncio"></s:submit>
         </s:form>
+        <s:form action="./gestion.jsp">
+            <s:submit value="Gestión entidades"></s:submit>
+        </s:form>
         <table class="sortable-theme-bootstrap" data-sortable>
             <thead>
                 <tr>
