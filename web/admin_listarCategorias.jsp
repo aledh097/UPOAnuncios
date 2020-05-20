@@ -19,8 +19,10 @@ crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de categorías</title>
         <s:head></s:head>
-        </head>
-        <body>
+        <jsp:include page="header.jsp" />
+    </head>
+    <body>
+        <br><br>
         <s:form action="./alta_Categoria.jsp">
             <s:submit value="Alta categoría"></s:submit>
         </s:form>
@@ -51,6 +53,8 @@ crossorigin="anonymous"></script>
                         </td>
                     </tr>
                 </s:iterator>
+
+                <jsp:include page="footer.jsp" />
 
             </tbody>
         </table>

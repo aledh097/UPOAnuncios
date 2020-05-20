@@ -5,10 +5,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Gestión de entidades</title>
+        <jsp:include page="header.jsp" />
     </head>
     <body>
+        <h1>Gestión de entidades</h1>
         <s:form action="listarCategorias">
             <s:submit name="gCategorias" value="Gestión categorías"></s:submit>
         </s:form>
+        <jsp:include page="footer.jsp" />
     </body>
 </html>

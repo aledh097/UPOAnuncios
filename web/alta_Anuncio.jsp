@@ -18,9 +18,10 @@ crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <s:head></s:head>
-        </head>
-        <body>
-            <h1>Alta Anuncio</h1>
+        <jsp:include page="header.jsp" />
+    </head>
+    <body>
+        <h1>Alta Anuncio</h1>
 
         <s:form action="altaAnuncio">
 
@@ -57,10 +58,12 @@ crossorigin="anonymous"></script>
 
                         </tr>
                         <tr colspan="2">
-                            <s:submit value="Dar de alta"></s:submit>
+                        <s:submit value="Dar de alta"></s:submit>
                         </tr>
                     </tbody>
                 </table>
         </s:form>
+
+        <jsp:include page="footer.jsp" />
 
 </html>

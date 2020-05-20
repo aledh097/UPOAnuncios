@@ -10,6 +10,7 @@
         <s:head></s:head>
     </head>
     <body>       
+        <jsp:include page="header.jsp" />
     <s:form action="registrarUsuario">
             <s:textfield name="nombre" label="Nombre"></s:textfield>
             <s:textfield name="apellidos" label="Apellidos"></s:textfield>
@@ -19,5 +20,6 @@
             <!--<s:password name="contrasenya" label="Repetir Contraseña"></s:password>-->
             <s:submit value="Acceder"></s:submit> 
         </s:form>
+            <jsp:include page="footer.jsp" />
     </body>
 </html>

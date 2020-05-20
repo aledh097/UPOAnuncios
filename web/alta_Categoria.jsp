@@ -44,4 +44,6 @@ crossorigin="anonymous"></script>
                 </table>
         </s:form>
 
+            <jsp:include page="footer.jsp" />
+            
 </html>

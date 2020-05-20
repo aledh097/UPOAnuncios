@@ -6,6 +6,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="header.jsp" />
         <h1>Error interno. Contácte con el administrador.</h1>
+        <jsp:include page="footer.jsp" />
     </body>
 </html>

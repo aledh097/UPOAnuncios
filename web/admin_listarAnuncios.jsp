@@ -21,14 +21,6 @@ crossorigin="anonymous"></script>
         <s:head></s:head>
         </head>
         <body>
-        <s:form action="irAltaAnuncio">
-            <s:submit value="Alta anuncio"></s:submit>
-        </s:form>
-        <s:if test="%{#session.usuario.rol != null}">
-            <s:form action="./gestion.jsp">
-                <s:submit value="Gestión entidades"></s:submit>
-            </s:form>
-        </s:if>
         <table class="sortable-theme-bootstrap" data-sortable>
             <thead>
                 <tr>
@@ -45,6 +37,8 @@ crossorigin="anonymous"></script>
                 </tr>
             </thead>
             <tbody>
+                <jsp:include page="header.jsp" />
+                <h1>Listado anuncios</h1>
                 <s:iterator value="%{anuncios}">
                     <tr>
                         <td><s:property value="%{titulo}"></s:property></td>
@@ -70,6 +64,8 @@ crossorigin="anonymous"></script>
                     </tr>
                 </s:iterator>
 
+            <jsp:include page="footer.jsp" />
+                    
             </tbody>
         </table>
     </body>

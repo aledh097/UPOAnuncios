@@ -9,11 +9,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <s:head></s:head>
     </head>
-    <body>       
+    <body>   
+        <jsp:include page="header.jsp" />
     <s:form action="comprobarLogin">
             <s:textfield name="correoElectronico" label="Correo electrónico"></s:textfield>
             <s:password name="contrasenya" label="Contraseña"></s:password>
             <s:submit value="Acceder"></s:submit> 
         </s:form>
+        <jsp:include page="footer.jsp" />
     </body>
 </html>
