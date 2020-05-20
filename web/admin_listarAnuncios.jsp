@@ -13,6 +13,7 @@ crossorigin="anonymous"></script>
 
 
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,6 +22,12 @@ crossorigin="anonymous"></script>
         <s:head></s:head>
         </head>
         <body>
+        <s:if test="%{#session.usuario == null}">
+            <%
+                response.sendRedirect("./login.jsp");
+            %>
+        </s:if>
+
         <table class="sortable-theme-bootstrap" data-sortable>
             <thead>
                 <tr>
@@ -37,36 +44,37 @@ crossorigin="anonymous"></script>
                 </tr>
             </thead>
             <tbody>
+
                 <jsp:include page="header.jsp" />
-                <h1>Listado anuncios</h1>
-                <s:iterator value="%{anuncios}">
-                    <tr>
-                        <td><s:property value="%{titulo}"></s:property></td>
-                        <td><s:property value="%{descripcion}"></s:property></td>
-                        <td><s:property value="%{precio}"></s:property></td>
-                        <td><s:property value="%{fechaCreacion}"></s:property></td>
-                        <td><s:property value="%{municipio.nombreMunicipio}"></s:property></td>
-                        <td><s:property value="%{tipoanuncio.nombreTipoAnuncio}"></s:property></td>
-                        <td><s:property value="%{categoria.nombreCategoria}"></s:property></td>
-                        <td><s:property value="%{usuario.nombre}"></s:property></td>
-                            <td>
-                            <s:form action="IrModificarAnuncio">
-                                <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
-                                <s:submit value="Modificar"></s:submit>
-                            </s:form>
-                        </td>
+            <h1>Listado anuncios</h1>
+            <s:iterator value="%{anuncios}">
+                <tr>
+                    <td><s:property value="%{titulo}"></s:property></td>
+                    <td><s:property value="%{descripcion}"></s:property></td>
+                    <td><s:property value="%{precio}"></s:property></td>
+                    <td><s:property value="%{fechaCreacion}"></s:property></td>
+                    <td><s:property value="%{municipio.nombreMunicipio}"></s:property></td>
+                    <td><s:property value="%{tipoanuncio.nombreTipoAnuncio}"></s:property></td>
+                    <td><s:property value="%{categoria.nombreCategoria}"></s:property></td>
+                    <td><s:property value="%{usuario.nombre}"></s:property></td>
                         <td>
-                            <s:form action="borrarAnuncio">
-                                <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
-                                <s:submit value="Borrar"></s:submit>
-                            </s:form>
-                        </td>
-                    </tr>
-                </s:iterator>
+                        <s:form action="IrModificarAnuncio">
+                            <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                            <s:submit value="Modificar"></s:submit>
+                        </s:form>
+                    </td>
+                    <td>
+                        <s:form action="borrarAnuncio">
+                            <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                            <s:submit value="Borrar"></s:submit>
+                        </s:form>
+                    </td>
+                </tr>
+            </s:iterator>
 
             <jsp:include page="footer.jsp" />
-                    
-            </tbody>
-        </table>
-    </body>
+
+        </tbody>
+    </table>
+</body>
 </html>

@@ -10,6 +10,13 @@
     <a class="active" href="<s:url action="listarAnuncios" />">Inicio</a>
     <a href="<s:url action="irAltaAnuncio" />">Alta Anuncio</a>
     <a href="./gestion.jsp">Gestión</a>
+    <s:if test="%{#session.usuario == null}">
+        <a href="./login.jsp">Login</a>
+        <a href="./registro.jsp">Registro</a>
+    </s:if>
+    <s:else>
+        <a href="./logout.jsp">Cerrar Sesión</a>
+    </s:else>
 </div>
 
 </html>

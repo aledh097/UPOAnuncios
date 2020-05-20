@@ -22,7 +22,14 @@ crossorigin="anonymous"></script>
 
         </head>
         <body>
-            <h1>Modificar Categoría</h1>
+
+        <s:if test="%{#session.usuario == null}">
+            <%
+                response.sendRedirect("./login.jsp");
+            %>
+        </s:if>
+
+        <h1>Modificar Categoría</h1>
 
 
         <s:form action="modCategoria">
@@ -41,7 +48,7 @@ crossorigin="anonymous"></script>
                         <s:textfield size="54" id="input_nombre" name="nombreCategoria" required="true" label="Nombre" value="%{#session.categoria.nombreCategoria}"></s:textfield>
 
                         </tr>
-                      
+
                         <tr>
                             <td colspan="2">       <s:submit value="Modificar"></s:submit></td>
                         </tr>

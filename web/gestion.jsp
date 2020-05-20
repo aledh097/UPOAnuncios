@@ -8,6 +8,12 @@
         <jsp:include page="header.jsp" />
     </head>
     <body>
+        <s:if test="%{#session.usuario == null}">
+            <%
+                response.sendRedirect("./login.jsp");
+            %>
+        </s:if>
+
         <h1>Gestión de entidades</h1>
         <s:form action="listarCategorias">
             <s:submit name="gCategorias" value="Gestión categorías"></s:submit>

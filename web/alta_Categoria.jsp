@@ -20,7 +20,14 @@ crossorigin="anonymous"></script>
         <s:head></s:head>
         </head>
         <body>
-            <h1>Alta Categoría</h1>
+            
+        <s:if test="%{#session.usuario == null}">
+            <%
+                response.sendRedirect("./login.jsp");
+            %>
+        </s:if>
+
+        <h1>Alta Categoría</h1>
 
         <s:form action="altaCategoria">
 
@@ -44,6 +51,6 @@ crossorigin="anonymous"></script>
                 </table>
         </s:form>
 
-            <jsp:include page="footer.jsp" />
-            
+        <jsp:include page="footer.jsp" />
+
 </html>

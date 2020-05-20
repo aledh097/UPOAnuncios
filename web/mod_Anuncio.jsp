@@ -22,7 +22,14 @@ crossorigin="anonymous"></script>
 
         </head>
         <body>
-            <h1>Modificar Anuncio</h1>
+
+        <s:if test="%{#session.usuario == null}">
+            <%
+                response.sendRedirect("./login.jsp");
+            %>
+        </s:if>
+
+        <h1>Modificar Anuncio</h1>
 
 
         <s:form action="modAnuncio">

@@ -16,11 +16,18 @@ crossorigin="anonymous"></script>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Alta de anuncio</title>
         <s:head></s:head>
         <jsp:include page="header.jsp" />
     </head>
     <body>
+
+        <s:if test="%{#session.usuario == null}">
+            <%
+                response.sendRedirect("./login.jsp");
+            %>
+        </s:if>
+
         <h1>Alta Anuncio</h1>
 
         <s:form action="altaAnuncio">

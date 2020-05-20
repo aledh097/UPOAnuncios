@@ -22,6 +22,13 @@ crossorigin="anonymous"></script>
         <jsp:include page="header.jsp" />
     </head>
     <body>
+
+        <s:if test="%{#session.usuario == null}">
+            <%
+                response.sendRedirect("./login.jsp");
+            %>
+        </s:if>
+
         <br><br>
         <s:form action="./alta_Categoria.jsp">
             <s:submit value="Alta categoría"></s:submit>

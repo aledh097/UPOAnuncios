@@ -11,6 +11,7 @@
     </head>
     <body>   
         <jsp:include page="header.jsp" />
+        <br><br>
     <s:form action="comprobarLogin">
             <s:textfield name="correoElectronico" label="Correo electrónico"></s:textfield>
             <s:password name="contrasenya" label="Contraseña"></s:password>
