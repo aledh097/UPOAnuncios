@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-may-2020 4:09:44 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="upoanuncios.Anuncio" table="anuncio" catalog="upoanuncios" optimistic-lock="version">
+        <id name="idAnuncio" type="java.lang.Integer">
+            <column name="idAnuncio" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categoria" class="upoanuncios.Categoria" fetch="select" lazy="false">
+            <column name="FK_idCategoria" not-null="true" />
+        </many-to-one>
+        <many-to-one name="municipio" class="upoanuncios.Municipio" fetch="select" lazy="false">
+            <column name="FK_codPostal" length="9" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tipoanuncio" class="upoanuncios.Tipoanuncio" fetch="select" lazy="false">
+            <column name="FK_idTipoAnuncio" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="upoanuncios.Usuario" fetch="select" lazy="false">
+            <column name="FK_idUsuario" not-null="true" />
+        </many-to-one>
+        <property name="titulo" type="string">
+            <column name="titulo" length="30" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="150" />
+        </property>
+        <property name="precio" type="java.lang.Float">
+            <column name="precio" precision="12" scale="0" />
+        </property>
+        <property name="fechaCreacion" type="timestamp">
+            <column name="fechaCreacion" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

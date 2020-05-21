@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 21-may-2020 18:45:06 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="upoanuncios.Mensaje" table="mensaje" catalog="upoanuncios" optimistic-lock="version">
+        <id name="idMensaje" type="java.lang.Integer">
+            <column name="idMensaje" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="anuncio" class="upoanuncios.Anuncio" fetch="select" lazy="false">
+            <column name="FK_idAnuncio" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarioByFkIdUsuarioDestino" class="upoanuncios.Usuario" fetch="select" lazy="false">
+            <column name="FK_idUsuarioDestino" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuarioByFkIdUsuarioOrigen" class="upoanuncios.Usuario" fetch="select" lazy="false">
+            <column name="FK_idUsuarioOrigen" not-null="true" />
+        </many-to-one>
+        <property name="titulo" type="string">
+            <column name="titulo" length="32" not-null="true" />
+        </property>
+        <property name="contenido" type="string">
+            <column name="contenido" length="256" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

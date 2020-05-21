@@ -42,12 +42,13 @@ crossorigin="anonymous"></script>
                     <th>Usuario</th>
                     <th>Modificar</th>
                     <th>Borrar</th>
+                    <th>Enviar Mensaje</th>
                 </tr>
             </thead>
             <tbody>
 
                 <jsp:include page="header.jsp" />
-            <h1>Listado anuncios</h1>
+            <h1>Listado de anuncios</h1>
             <s:iterator value="%{anuncios}">
                 <tr>
                     <td><s:property value="%{titulo}"></s:property></td>
@@ -60,17 +61,29 @@ crossorigin="anonymous"></script>
                     <td><s:property value="%{usuario.nombre}"></s:property></td>
                     <s:if test="%{#session.esAdmin != null || #session.usuario.idUsuario == usuario.idUsuario}">
                         <td>
-                        <s:form action="IrModificarAnuncio">
-                            <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
-                            <s:submit value="Modificar"></s:submit>
-                        </s:form>
-                    </td>
-                    <td>
-                        <s:form action="borrarAnuncio">
-                            <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
-                            <s:submit value="Borrar"></s:submit>
-                        </s:form>
-                    </td>
+                            <s:form action="IrModificarAnuncio">
+                                <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                                <s:submit value="Modificar"></s:submit>
+                            </s:form>
+                        </td>
+                        <td>
+                            <s:form action="borrarAnuncio">
+                                <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                                <s:submit value="Borrar"></s:submit>
+                            </s:form>
+                        </td>
+                    </s:if>
+                    <s:else>
+                        <td></td>
+                        <td></td>
+                    </s:else>
+                    <s:if test="%{#session.usuario.idUsuario != usuario.idUsuario}">
+                        <td>
+                            <s:form action="enviarMensajeAnuncio">
+                                <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
+                                <s:submit value="Enviar"></s:submit>
+                            </s:form>
+                        </td>
                     </s:if>
                 </tr>
             </s:iterator>

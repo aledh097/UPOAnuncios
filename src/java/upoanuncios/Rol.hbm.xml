@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-may-2020 4:09:44 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="upoanuncios.Rol" table="rol" catalog="upoanuncios" optimistic-lock="version">
+        <id name="idRol" type="java.lang.Integer">
+            <column name="idRol" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreRol" type="string" lazy="false">
+            <column name="nombreRol" length="10" not-null="true" unique="true" />
+        </property>
+        <set name="usuarios" table="usuario" inverse="true" fetch="select" lazy="false">
+            <key>
+                <column name="FK_idRol" not-null="true" />
+            </key>
+            <one-to-many class="upoanuncios.Usuario" />
+        </set>
+    </class>
+</hibernate-mapping>

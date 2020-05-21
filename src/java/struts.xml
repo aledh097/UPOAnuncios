@@ -90,6 +90,23 @@
             <result name="input">/mod_Categoria.jsp</result>
         </action>
         
+        <action name="irListadoMensajes" class="acciones.mensajesAccion">
+            <result name="success">/listar_Mensajes.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
+        <action name="enviarMensajeAnuncio" class="acciones.mensajesAccion" method="almacenarIdAnuncio">
+            <result name="success">/alta_Mensaje.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
+         <action name="altaMensaje" class="acciones.mensajesAccion" method="altaMensaje">
+            <result name="success" type="redirectAction">listarAnuncios</result>
+            <result name="error">/error.jsp</result>
+            <result name="input">/alta_Mensaje.jsp</result>
+        </action>
+        
+        
     </package>
     
 
