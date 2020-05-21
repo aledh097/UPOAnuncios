@@ -8,7 +8,7 @@
             <column name="idUsuario" />
             <generator class="identity" />
         </id>
-        <many-to-one name="rol" class="upoanuncios.Rol" fetch="select">
+        <many-to-one name="rol" class="upoanuncios.Rol" fetch="select" lazy="false">
             <column name="FK_idRol" not-null="true" />
         </many-to-one>
         <property name="nombre" type="string">

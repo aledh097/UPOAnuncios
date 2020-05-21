@@ -27,6 +27,8 @@ crossorigin="anonymous"></script>
             %>
         </s:if>
 
+        <jsp:include page="header.jsp" />
+            
         <h1>Alta Categoría</h1>
 
         <s:form action="altaCategoria">

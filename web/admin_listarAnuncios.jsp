@@ -28,12 +28,13 @@ crossorigin="anonymous"></script>
             %>
         </s:if>
 
+
         <table class="sortable-theme-bootstrap" data-sortable>
             <thead>
                 <tr>
                     <th>Título</th>
                     <th>Descripción</th>
-                    <th>Precio</th>
+                    <th>Precio (€)</th>
                     <th>fechaCreación</th>
                     <th>Municipio</th>
                     <th>Tipo de anuncio</th>
@@ -57,6 +58,7 @@ crossorigin="anonymous"></script>
                     <td><s:property value="%{tipoanuncio.nombreTipoAnuncio}"></s:property></td>
                     <td><s:property value="%{categoria.nombreCategoria}"></s:property></td>
                     <td><s:property value="%{usuario.nombre}"></s:property></td>
+                    <s:if test="%{#session.esAdmin != null || #session.usuario.idUsuario == usuario.idUsuario}">
                         <td>
                         <s:form action="IrModificarAnuncio">
                             <s:hidden name="idAnuncio" value="%{idAnuncio}"></s:hidden>
@@ -69,6 +71,7 @@ crossorigin="anonymous"></script>
                             <s:submit value="Borrar"></s:submit>
                         </s:form>
                     </td>
+                    </s:if>
                 </tr>
             </s:iterator>
 

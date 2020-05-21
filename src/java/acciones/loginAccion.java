@@ -47,7 +47,10 @@ public class loginAccion extends ActionSupport {
          Usuario usuario = new usuariosDAO().comprobarLogin(this.getCorreoElectronico(), this.getContrasenya());
         if(usuario!=null){
             Map sesion = (Map) ActionContext.getContext().getSession();
-            sesion.put("usuario", usuario);                     
+            sesion.put("usuario", usuario); 
+            if(usuario.getRol().getNombreRol().equals("Admin")){
+                sesion.put("esAdmin",true);
+            }
             return SUCCESS;
         }else{
             return ERROR;
