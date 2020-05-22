@@ -7,7 +7,7 @@
         </field-validator>
         <field-validator type="stringlength">
             <param name="minLength">4</param>
-            <message>El nombre debe tener al menos 4 carácteres</message>
+            <message>El nombre debe tener al menos 4 caracteres</message>
         </field-validator>
     </field>   
     <field name="apellidos">
@@ -16,7 +16,7 @@
         </field-validator>
         <field-validator type="stringlength">
             <param name="minLength">4</param>
-            <message>Los apellidos deben tener al menos 4 carácteres</message>
+            <message>Los apellidos deben tener al menos 4 caracteres</message>
         </field-validator>
     </field> 
     <field name="telefono">
@@ -42,7 +42,7 @@
         </field-validator>
         <field-validator type="stringlength">
             <param name="minLength">6</param>
-            <message>La contraseña debe tener al menos 6 carácteres</message>
+            <message>La contraseña debe tener al menos 6 caracteres</message>
         </field-validator>
     </field>       
 </validators>

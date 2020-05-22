@@ -47,7 +47,6 @@
         <action name="altaAnuncio" class="acciones.anunciosAccion" method="altaAnuncio">
             <result name="success" type="redirectAction">listarAnuncios</result>
             <result name="error">/error.jsp</result>
-            <result name="input">/alta_Anuncio.jsp</result>
         </action>
         
         <action name="altaCategoria" class="acciones.categoriasAccion" method="altaCategoria">
