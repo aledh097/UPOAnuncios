@@ -18,7 +18,7 @@ crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <s:head></s:head>
-        <link href="assets/alta_mensaje.css" rel="stylesheet" type="text/css"/>
+            <link href="assets/alta_mensaje.css" rel="stylesheet" type="text/css"/>
         </head>
         <body>
 
@@ -46,7 +46,7 @@ crossorigin="anonymous"></script>
                             <s:textfield id="input_titulo" name="titulo" required="true" label="Título"></s:textfield>
                             </tr>
                             <tr>
-                            <s:textarea id="input_contenido" name="contenido" label="Contenido"></s:textarea>
+                            <s:textarea id="input_contenido" name="contenido" required="true" rows="10" label="Contenido"></s:textarea>
 
                             </tr>
 
