@@ -18,9 +18,10 @@ crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <s:head></s:head>
+        <link href="assets/alta_mensaje.css" rel="stylesheet" type="text/css"/>
         </head>
         <body>
-            
+
         <s:if test="%{#session.usuario == null}">
             <%
                 response.sendRedirect("./login.jsp");
@@ -28,34 +29,34 @@ crossorigin="anonymous"></script>
         </s:if>
 
         <jsp:include page="header.jsp" />
-            
-        <h1>Enviar Mensaje</h1>
+        <div id="divAltaMensaje">
+            <h1>Enviar Mensaje</h1>
 
-        <s:form action="altaMensaje">
+            <s:form action="altaMensaje">
 
-            <table border="1"  data-sortable>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Contenido</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <s:textfield id="input_titulo" name="titulo" required="true" label="Título"></s:textfield>
-                        </tr>
+                <table border="1"  data-sortable>
+                    <thead>
                         <tr>
-                        <s:textarea id="input_contenido" name="contenido" label="Contenido"></s:textarea>
-
+                            <th>Título</th>
+                            <th>Contenido</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <s:textfield id="input_titulo" name="titulo" required="true" label="Título"></s:textfield>
+                            </tr>
+                            <tr>
+                            <s:textarea id="input_contenido" name="contenido" label="Contenido"></s:textarea>
 
-                        <tr colspan="2">
-                        <s:submit value="Enviar Mensaje"></s:submit>
-                        </tr>
-                    </tbody>
-                </table>
-        </s:form>
+                            </tr>
 
-        <jsp:include page="footer.jsp" />
+                            <tr colspan="2">
+                            <s:submit value="Enviar Mensaje"></s:submit>
+                            </tr>
+                        </tbody>
+                    </table>
+            </s:form>
 
+            <jsp:include page="footer.jsp" />
+        </div>
 </html>
