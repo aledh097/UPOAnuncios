@@ -19,6 +19,7 @@
         
         <action name="comprobarLogin" class="acciones.loginAccion">
             <result type="redirectAction">listarAnuncios</result>
+            <result name="input">/login.jsp</result>
             <result name="error">/login.jsp</result>
         </action>
         
