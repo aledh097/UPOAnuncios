@@ -8,15 +8,19 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <s:head></s:head>
-    </head>
-    <body>   
+        <link href="assets/login.css" rel="stylesheet" type="text/css"/>
+        </head>
+        <body>   
         <jsp:include page="header.jsp" />
         <br><br>
-    <s:form action="comprobarLogin">
-            <s:textfield name="correoElectronico" label="Correo electrónico"></s:textfield>
-            <s:password name="contrasenya" label="Contraseña"></s:password>
-            <s:submit value="Acceder"></s:submit> 
-        </s:form>
-        <jsp:include page="footer.jsp" />
+        <div id="divLogin">
+        <h1>Iniciar sesión</h1>
+            <s:form action="comprobarLogin">
+                <s:textfield name="correoElectronico" label="Correo electrónico"></s:textfield>
+                <s:password name="contrasenya" label="Contraseña"></s:password>
+                <s:submit value="Acceder"></s:submit> 
+            </s:form>
+            <jsp:include page="footer.jsp" />
+        </div>
     </body>
 </html>
