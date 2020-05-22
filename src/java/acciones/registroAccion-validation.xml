@@ -1,0 +1,50 @@
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN" "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+    <field name="nombre">
+        <field-validator type="requiredstring">
+            <message>Nombre de usuario requerido</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">4</param>
+            <message>El nombre debe tener al menos 4 carácteres</message>
+        </field-validator>
+    </field>   
+    <field name="apellidos">
+        <field-validator type="requiredstring">
+            <message>Apellidos de usuario requerido</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">4</param>
+            <message>Los apellidos deben tener al menos 4 carácteres</message>
+        </field-validator>
+    </field> 
+    <field name="telefono">
+        <field-validator type="requiredstring">
+            <message>El teléfono es requerido</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regex">(\+34|0034|34)?[ -]*(6|7|9)[ -]*([0-9][ -]*){8}</param>
+            <message>El formato del teléfono es incorrecto</message>    
+        </field-validator>
+    </field>    
+    <field name="correoElectronico">
+        <field-validator type="requiredstring">
+            <message>El correo electrónico es requerido</message>
+        </field-validator>
+        <field-validator type="email"> 
+            <message>El formato del correo es incorrecto</message> 
+        </field-validator> 
+    </field> 
+    <field name="contrasenya">
+        <field-validator type="requiredstring">
+            <message>La constraseña es requerida</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">6</param>
+            <message>La contraseña debe tener al menos 6 carácteres</message>
+        </field-validator>
+    </field>       
+</validators>
+
+
