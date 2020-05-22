@@ -26,7 +26,7 @@
             <s:textfield name="correoElectronico" label="Correo Electrónico"></s:textfield>
             <s:password name="contrasenya" label="Contraseña"></s:password>
             <!--<s:password name="contrasenya" label="Repetir Contraseña"></s:password>-->
-            <s:submit value="Acceder"></s:submit> 
+            <s:submit value="Registrarse"></s:submit> 
         </s:form>
             <jsp:include page="footer.jsp" />
     </body>

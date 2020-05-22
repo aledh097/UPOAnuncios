@@ -10,12 +10,12 @@
     <a class="active" href="<s:url action="listarAnuncios" />">Inicio</a>
     <a href="<s:url action="irAltaAnuncio" />">Alta Anuncio</a>
     <a href="./gestion.jsp">Gestión</a>
-    <a href="<s:url action="irListadoMensajes" />">Mis Mensajes</a>
     <s:if test="%{#session.usuario == null}">
         <a href="./login.jsp">Login</a>
         <a href="./registro.jsp">Registro</a>
     </s:if>
     <s:else>
+        <a href="<s:url action="irListadoMensajes" />">Mis Mensajes</a>
         <a href="./logout.jsp">Cerrar Sesión</a>
     </s:else>
 </div>

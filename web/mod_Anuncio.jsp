@@ -21,6 +21,9 @@ crossorigin="anonymous"></script>
 
 
         </head>
+        
+        <jsp:include page="header.jsp" />
+        
         <body>
 
         <s:if test="%{#session.usuario == null}">
@@ -77,5 +80,7 @@ crossorigin="anonymous"></script>
                     </tbody>
                 </table>
         </s:form>
+        
+        <jsp:include page="footer.jsp" />
 
 </html>

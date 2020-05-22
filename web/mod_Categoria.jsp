@@ -17,10 +17,10 @@ crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <s:head></s:head>
-
-
-
         </head>
+        
+        <jsp:include page="header.jsp" />
+        
         <body>
 
         <s:if test="%{#session.usuario == null}">
@@ -55,5 +55,7 @@ crossorigin="anonymous"></script>
                     </tbody>
                 </table>
         </s:form>
+        
+        <jsp:include page="footer.jsp" />
 
 </html>
