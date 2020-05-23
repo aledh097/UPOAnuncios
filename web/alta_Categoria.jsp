@@ -18,9 +18,10 @@ crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <s:head></s:head>
+            <link href="assets/alta_categoria.css" rel="stylesheet" type="text/css"/>
         </head>
         <body>
-            
+
         <s:if test="%{#session.usuario == null}">
             <%
                 response.sendRedirect("./login.jsp");
@@ -28,31 +29,31 @@ crossorigin="anonymous"></script>
         </s:if>
 
         <jsp:include page="header.jsp" />
-            
-        <h1>Alta Categoría</h1>
+        <div id="divAltaCategoria">
+            <h1>Alta Categoría</h1>
 
-        <s:form action="altaCategoria">
+            <s:form action="altaCategoria">
 
-            <table border="1"  data-sortable>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Valor</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <s:textfield id="input_nombre" name="nombreCategoria" required="true" label="Nombre"></s:textfield>
-
+                <table border="1"  data-sortable>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Valor</th>
                         </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <s:textfield id="input_nombre" name="nombreCategoria" required="true" label="Nombre"></s:textfield>
 
-                        <tr colspan="2">
-                        <s:submit value="Dar de alta"></s:submit>
-                        </tr>
-                    </tbody>
-                </table>
-        </s:form>
+                            </tr>
 
+                            <tr colspan="2">
+                            <s:submit value="Dar de alta"></s:submit>
+                            </tr>
+                        </tbody>
+                    </table>
+            </s:form>
+        </div>
         <jsp:include page="footer.jsp" />
 
 </html>
