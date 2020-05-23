@@ -149,15 +149,6 @@ public class anunciosAccion extends ActionSupport {
         }
     }
 
-    public String execute() throws Exception {
-        try {
-            anuncios = new anunciosDAO().listadoAnuncios();
-            return SUCCESS;
-        } catch (Exception e) {
-            return ERROR;
-        }
-    }
-
     public String borrarAnuncio() {
         try {
             new anunciosDAO().borrar(getIdAnuncio());

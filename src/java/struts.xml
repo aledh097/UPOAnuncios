@@ -23,7 +23,7 @@
             <result name="error">/login.jsp</result>
         </action>
         
-        <action name="listarAnuncios" class="acciones.anunciosAccion">
+        <action name="listarAnuncios" class="acciones.datosAnunciosAccion">
             <result name="success">/admin_listarAnuncios.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
@@ -58,6 +58,7 @@
         <action name="altaAnuncio" class="acciones.anunciosAccion" method="altaAnuncio">
             <result name="success" type="redirectAction">listarAnuncios</result>
             <result name="error">/error.jsp</result>
+            <result name="input">/alta_Anuncio.jsp</result>
         </action>
         
         <action name="altaCategoria" class="acciones.categoriasAccion" method="altaCategoria">
