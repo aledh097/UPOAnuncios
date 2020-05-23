@@ -60,7 +60,6 @@ crossorigin="anonymous"></script>
                         </td>
                     </tr>
                 </s:iterator>
-
                 <jsp:include page="footer.jsp" />
 
             </tbody>

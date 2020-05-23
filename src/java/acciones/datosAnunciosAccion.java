@@ -18,9 +18,9 @@ import upoanuncios.Anuncio;
  * @author Alex
  */
 public class datosAnunciosAccion extends ActionSupport {
-    
+
     private List<Anuncio> anuncios = new ArrayList<>();
-    
+
     public datosAnunciosAccion() {
     }
 
@@ -31,9 +31,7 @@ public class datosAnunciosAccion extends ActionSupport {
     public void setAnuncios(List<Anuncio> anuncios) {
         this.anuncios = anuncios;
     }
-    
-    
-    
+
     public String execute() throws Exception {
         try {
             anuncios = new anunciosDAO().listadoAnuncios();
@@ -42,5 +40,5 @@ public class datosAnunciosAccion extends ActionSupport {
             return ERROR;
         }
     }
-    
+
 }

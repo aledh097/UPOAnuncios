@@ -9,6 +9,7 @@ import DAO.categoriasDAO;
 import DAO.tiposanuncioDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -53,10 +54,10 @@ public class tiposAnuncioAccion extends ActionSupport {
         return nombreTipoAnuncio;
     }
 
+    @StringLengthFieldValidator(minLength = "4", maxLength = "20", message = "El tipo de anuncio debe tener al menos 4 caracteres y menos de 20 caracteres")
     public void setNombreTipoAnuncio(String nombreTipoAnuncio) {
         this.nombreTipoAnuncio = nombreTipoAnuncio;
     }
-
 
     public String execute() throws Exception {
         try {
@@ -109,6 +110,5 @@ public class tiposAnuncioAccion extends ActionSupport {
             return ERROR;
         }
     }
-    
 
 }
