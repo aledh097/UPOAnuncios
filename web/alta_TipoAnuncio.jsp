@@ -18,6 +18,7 @@ crossorigin="anonymous"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <s:head></s:head>
+            <link href="assets/alta_tipoanuncio.css" rel="stylesheet" type="text/css"/>
         </head>
         <body>
 
