@@ -72,8 +72,8 @@ crossorigin="anonymous"></script>
                     </table>
 
             </s:form>
-
+</div>
             <jsp:include page="footer.jsp" />
-        </div>
+        
 
 </html>
