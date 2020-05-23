@@ -34,7 +34,7 @@ public class anunciosAccion extends ActionSupport {
     private Float precio;
     private Date fechaCreacion;
 
-    private int fkCodPostal;
+    private String fkCodPostal;
     private int fkIdTipoAnuncio;
     private int fkIdCategoria;
 
@@ -86,11 +86,11 @@ public class anunciosAccion extends ActionSupport {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public int getFkCodPostal() {
+    public String getFkCodPostal() {
         return fkCodPostal;
     }
 
-    public void setFkCodPostal(int fkCodPostal) {
+    public void setFkCodPostal(String fkCodPostal) {
         this.fkCodPostal = fkCodPostal;
     }
 
@@ -112,6 +112,7 @@ public class anunciosAccion extends ActionSupport {
 
     public anunciosAccion() {
     }
+    
 
     public String modAnuncio() {
         try {

@@ -17,8 +17,15 @@
 
         <div id="divGestion">
             <h1>Gestión de entidades</h1>
+            <br>
             <s:form action="listarCategorias">
                 <s:submit name="gCategorias" value="Gestión categorías"></s:submit>
+            </s:form>
+            <s:form action="listarMunicipios">
+                <s:submit name="gMunicipios" value="Gestión municipios"></s:submit>
+            </s:form>
+            <s:form action="listarTiposAnuncio">
+                <s:submit name="gTiposAnuncio" value="Gestión tipos de anuncio"></s:submit>
             </s:form>
         </div>
         <jsp:include page="footer.jsp" />
