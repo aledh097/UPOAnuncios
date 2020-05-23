@@ -20,6 +20,9 @@
                 <s:password name="contrasenya" label="Contraseña"></s:password>
                 <s:submit value="Acceder"></s:submit> 
             </s:form>
+             <s:if test="%{#session.logueoIncorrecto != null}">
+               <p style="color:red;text-align:center;">¡Datos incorrectos!</p>
+            </s:if>
             <jsp:include page="footer.jsp" />
         </div>
     </body>

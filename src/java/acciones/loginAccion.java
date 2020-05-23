@@ -53,6 +53,8 @@ public class loginAccion extends ActionSupport {
             }
             return SUCCESS;
         }else{
+            Map sesion = (Map) ActionContext.getContext().getSession();
+            sesion.put("logueoIncorrecto", true);
             return ERROR;
         }
     }

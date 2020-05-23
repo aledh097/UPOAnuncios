@@ -8,7 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <s:head></s:head>
-        <link href="assets/registro.css" rel="stylesheet" type="text/css"/>
+            <link href="assets/registro.css" rel="stylesheet" type="text/css"/>
         </head>
         <body>     
 
@@ -28,9 +28,12 @@
                 <s:textfield name="telefono" label="Teléfono"></s:textfield>
                 <s:textfield name="correoElectronico" label="Correo Electrónico"></s:textfield>
                 <s:password name="contrasenya" label="Contraseña"></s:password>
-                <!--<s:password name="contrasenya" label="Repetir Contraseña"></s:password>-->
+                <s:password name="contrasenyaVerif" label="Repetir Contraseña"></s:password>
                 <s:submit value="Registrarse"></s:submit> 
             </s:form>
+            <s:if test="%{#session.contrasenyasDistintas != null}">
+                <p style="color:red;text-align:center;">¡Contraseñas distintas!</p>
+            </s:if>
         </div>
         <jsp:include page="footer.jsp" />
     </body>

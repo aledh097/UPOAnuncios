@@ -1,20 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.usuariosDAO;
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
+import java.util.Map;
 import upoanuncios.Rol;
 import upoanuncios.Usuario;
 
-/**
- *
- * @author Alex
- */
 public class registroAccion extends ActionSupport {
 
     private Integer idUsuario;
@@ -24,6 +17,7 @@ public class registroAccion extends ActionSupport {
     private String telefono;
     private String correoElectronico;
     private String contrasenya;
+    private String contrasenyaVerif;
     private Date fechaAlta;
 
     public registroAccion() {
@@ -93,13 +87,31 @@ public class registroAccion extends ActionSupport {
         this.fechaAlta = fechaAlta;
     }
 
-    public String execute() throws Exception {
+    public String getContrasenyaVerif() {
+        return contrasenyaVerif;
+    }
+
+    public void setContrasenyaVerif(String contrasenyaVerif) {
+        this.contrasenyaVerif = contrasenyaVerif;
+    }
+    
+    
+
+public String execute() throws Exception {
+
         try {
-            Rol r = new usuariosDAO().rolCliente();
-            Date d = new Date();
-            Usuario u = new Usuario(r, getNombre(), getApellidos(), getTelefono(), getCorreoElectronico(), getContrasenya(), d);
-            new usuariosDAO().altaUsuario(u);
-            return SUCCESS;
+            if (getContrasenya().equals(getContrasenyaVerif())) {
+                Rol r = new usuariosDAO().rolCliente();
+                Date d = new Date();
+                Usuario u = new Usuario(r, getNombre(), getApellidos(), getTelefono(), getCorreoElectronico(), getContrasenya(), d);
+                new usuariosDAO().altaUsuario(u);
+                return SUCCESS;
+            } else {
+                Map sesion = (Map) ActionContext.getContext().getSession();
+                sesion.put("contrasenyasDistintas", true);
+                return ERROR;
+            }
+
         } catch (Exception e) {
             return ERROR;
         }

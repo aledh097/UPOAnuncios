@@ -36,7 +36,7 @@
         <action name="registrarUsuario" class="acciones.registroAccion">
             <result name="success">/registroCompletado.jsp</result>
             <result name="input">/registro.jsp</result>
-            <result name="error">/error.jsp</result>
+            <result name="error">/registro.jsp</result>
         </action>
         
         <action name="irAltaAnuncio" class="acciones.cargarDatosAccion" method="datosAnuncio">
