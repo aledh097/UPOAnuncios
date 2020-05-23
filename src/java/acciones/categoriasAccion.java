@@ -8,6 +8,7 @@ package acciones;
 import DAO.categoriasDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +52,7 @@ public class categoriasAccion extends ActionSupport {
         return categorias;
     }
 
+    @StringLengthFieldValidator(minLength = "4", maxLength = "20", message = "La categoría debe tener al menos 4 caracteres y menos de 20 caracteres")
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
     }

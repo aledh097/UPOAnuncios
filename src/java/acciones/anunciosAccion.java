@@ -11,6 +11,11 @@ import DAO.municipiosDAO;
 import DAO.tiposanuncioDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.DoubleRangeFieldValidator;
+import com.opensymphony.xwork2.validator.annotations.IntRangeFieldValidator;
+import com.opensymphony.xwork2.validator.annotations.RegexFieldValidator;
+import com.opensymphony.xwork2.validator.annotations.RequiredStringValidator;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -58,6 +63,7 @@ public class anunciosAccion extends ActionSupport {
         return titulo;
     }
 
+    @StringLengthFieldValidator(minLength = "4", maxLength = "20", message = "El título debe tener al menos 4 caracteres y menos de 20 caracteres")
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -66,6 +72,7 @@ public class anunciosAccion extends ActionSupport {
         return descripcion;
     }
 
+    @StringLengthFieldValidator(minLength = "4", maxLength = "200", message = "La descripción debe tener al menos 4 caracteres y menos de 200 caracteres")
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
@@ -74,6 +81,8 @@ public class anunciosAccion extends ActionSupport {
         return precio;
     }
 
+    @RegexFieldValidator(regex = "\\d+", message = "El precio tiene que ser un número")
+    @DoubleRangeFieldValidator(minExclusive = "0.0", message = "El precio debe ser mayor de 0 €")
     public void setPrecio(Float precio) {
         this.precio = precio;
     }
@@ -112,7 +121,6 @@ public class anunciosAccion extends ActionSupport {
 
     public anunciosAccion() {
     }
-    
 
     public String modAnuncio() {
         try {
@@ -176,7 +184,7 @@ public class anunciosAccion extends ActionSupport {
             session.put("municipios", municipios);
 
             Anuncio a = new anunciosDAO().searchById(getIdAnuncio());
-            session.put("anuncio",a);
+            session.put("anuncio", a);
 
             return SUCCESS;
         } catch (Exception e) {

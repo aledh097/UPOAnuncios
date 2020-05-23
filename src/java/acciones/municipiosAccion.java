@@ -8,6 +8,9 @@ package acciones;
 import DAO.municipiosDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.validator.annotations.IntRangeFieldValidator;
+import com.opensymphony.xwork2.validator.annotations.RegexFieldValidator;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +30,7 @@ public class municipiosAccion extends ActionSupport {
         return codPostal;
     }
 
+    @RegexFieldValidator(regex = "/(([1-4][0-9][0-9][0-9][0-9])|(0(?=[1-9][0-9][0-9][0-9]))|(5(?=[0-2][0-9][0-9][0-9])))/", message = "Código postal incorrecto")
     public void setCodPostal(String codPostal) {
         this.codPostal = codPostal;
     }
@@ -35,6 +39,7 @@ public class municipiosAccion extends ActionSupport {
         return nombreMunicipio;
     }
 
+    @StringLengthFieldValidator(minLength = "2", maxLength = "100", message = "El municipio debe tener al menos 2 caracteres y menos de 100 caracteres")
     public void setNombreMunicipio(String nombreMunicipio) {
         this.nombreMunicipio = nombreMunicipio;
     }

@@ -49,7 +49,7 @@ crossorigin="anonymous"></script>
                         </thead>
                         <tbody>
                             <tr>
-                            <s:textfield size="54" id="input_titulo" name="titulo" required="true" label="Título" value="%{#session.anuncio.titulo}"></s:textfield>
+                            <s:textfield size="54" id="input_titulo" name="titulo" required = "true" label="Título" value="%{#session.anuncio.titulo}"></s:textfield>
 
                             </tr>
                             <tr>
