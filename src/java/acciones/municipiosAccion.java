@@ -30,7 +30,7 @@ public class municipiosAccion extends ActionSupport {
         return codPostal;
     }
 
-    @RegexFieldValidator(regex = "/(([1-4][0-9][0-9][0-9][0-9])|(0(?=[1-9][0-9][0-9][0-9]))|(5(?=[0-2][0-9][0-9][0-9])))/", message = "Código postal incorrecto")
+    @RegexFieldValidator(regex = "0[1-9][0-9]{3}|[1-4][0-9]{4}|5[0-2][0-9]{3}", message = "Código postal incorrecto")
     public void setCodPostal(String codPostal) {
         this.codPostal = codPostal;
     }
