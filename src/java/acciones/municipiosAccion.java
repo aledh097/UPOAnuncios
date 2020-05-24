@@ -40,7 +40,7 @@ public class municipiosAccion extends ActionSupport {
     }
 
     @StringLengthFieldValidator(minLength = "2", maxLength = "100", message = "El municipio debe tener al menos 2 caracteres y menos de 100 caracteres")
-//    @RegexFieldValidator(regex ="", message = "Nombre municipio incorrecto")
+//    @RegexFieldValidator(regex ="/^[a-z][a-z\\s]*$/", message = "Nombre municipio incorrecto")
     public void setNombreMunicipio(String nombreMunicipio) {
         this.nombreMunicipio = nombreMunicipio;
     }

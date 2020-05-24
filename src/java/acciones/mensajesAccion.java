@@ -10,6 +10,7 @@ import DAO.mensajesDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.util.logging.Logger;
+import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +52,7 @@ public class mensajesAccion extends ActionSupport {
         return titulo;
     }
 
+    @StringLengthFieldValidator(minLength = "2", maxLength = "20", message = "El titulo debe tener al menos 2 caracteres y menos de 20 caracteres")
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
@@ -59,11 +61,10 @@ public class mensajesAccion extends ActionSupport {
         return contenido;
     }
 
+    @StringLengthFieldValidator(minLength = "2", maxLength = "200", message = "El contenido debe tener al menos 2 caracteres y menos de 200 caracteres")
     public void setContenido(String contenido) {
         this.contenido = contenido;
     }
-    
-    
 
     public String execute() throws Exception {
         try {
@@ -87,8 +88,8 @@ public class mensajesAccion extends ActionSupport {
         }
 
     }
-    
-    public String altaMensaje(){
+
+    public String altaMensaje() {
         try {
             Map sesion = (Map) ActionContext.getContext().getSession();
             int idAnuncio = (int) sesion.get("idAnuncio");
