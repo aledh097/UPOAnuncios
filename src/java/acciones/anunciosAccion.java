@@ -63,7 +63,7 @@ public class anunciosAccion extends ActionSupport {
         return titulo;
     }
 
-    @StringLengthFieldValidator(minLength = "4", maxLength = "20", message = "El título debe tener al menos 4 caracteres y menos de 20 caracteres")
+    @StringLengthFieldValidator(minLength = "4", maxLength = "50", message = "El título debe tener al menos 4 caracteres y menos de 50 caracteres")
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
