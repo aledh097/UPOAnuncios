@@ -67,6 +67,9 @@
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/upoanuncios/Tipoanuncio.hbm.xml</file>
             <file>file:/C:/Users/Alex/Dropbox/UPO/3-ano/2-Cuatrimestre/Integración%20de%20Tecnologías/Proyecto/UPOAnuncios/src/java/DAO/mensajesDAO.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/C:/Users/noeju/iCloudDrive/1_UPO/323_IT/7_Trabajo/0_GitRepo/UPOAnuncios/web/assets/login.css</file>
+            <file>file:/C:/Users/noeju/iCloudDrive/1_UPO/323_IT/7_Trabajo/0_GitRepo/UPOAnuncios/web/assets/sortable/sortable-theme-bootstrap.css</file>
+        </group>
     </open-files>
 </project-private>

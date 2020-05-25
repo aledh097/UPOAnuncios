@@ -52,7 +52,7 @@ public class mensajesAccion extends ActionSupport {
         return titulo;
     }
 
-    @StringLengthFieldValidator(minLength = "2", maxLength = "20", message = "El titulo debe tener al menos 2 caracteres y menos de 20 caracteres")
+    @StringLengthFieldValidator(minLength = "2", maxLength = "50", message = "El titulo debe tener al menos 2 caracteres y menos de 50 caracteres")
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
