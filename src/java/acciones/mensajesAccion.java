@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.anunciosDAO;
@@ -18,10 +13,6 @@ import upoanuncios.Anuncio;
 import upoanuncios.Mensaje;
 import upoanuncios.Usuario;
 
-/**
- *
- * @author Alex
- */
 public class mensajesAccion extends ActionSupport {
 
     private List<Mensaje> mensajes = new ArrayList<Mensaje>();
@@ -68,9 +59,10 @@ public class mensajesAccion extends ActionSupport {
 
     public String execute() throws Exception {
         try {
+//            Mostramos el listado de mensajes recibido por un usuario
             Map sesion = (Map) ActionContext.getContext().getSession();
             Usuario u = (Usuario) sesion.get("usuario");
-            mensajes = new mensajesDAO().listadoAnuncios(u.getIdUsuario());
+            mensajes = new mensajesDAO().listadoMensajes(u.getIdUsuario());
             return SUCCESS;
         } catch (Exception e) {
             return ERROR;
@@ -80,6 +72,7 @@ public class mensajesAccion extends ActionSupport {
 
     public String almacenarIdAnuncio() {
         try {
+//            Guardamos el id del anuncio en sesión para un posterior uso.
             Map sesion = (Map) ActionContext.getContext().getSession();
             sesion.put("idAnuncio", getIdAnuncio());
             return SUCCESS;
@@ -91,6 +84,7 @@ public class mensajesAccion extends ActionSupport {
 
     public String altaMensaje() {
         try {
+//            Damos de alta un mensaje
             Map sesion = (Map) ActionContext.getContext().getSession();
             int idAnuncio = (int) sesion.get("idAnuncio");
             Anuncio a = new anunciosDAO().searchById(idAnuncio);

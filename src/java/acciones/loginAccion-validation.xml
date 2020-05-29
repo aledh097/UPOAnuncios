@@ -13,10 +13,6 @@
         <field-validator type="requiredstring">
             <message>Contraseña requerida</message>
         </field-validator>
-<!--        <field-validator type="stringlength">
-            <param name="minLength">6</param>
-            <message>La contraseña es incorrecta</message>
-        </field-validator>-->
     </field>   
 </validators>
 

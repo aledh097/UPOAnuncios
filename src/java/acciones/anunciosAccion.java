@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.anunciosDAO;
@@ -26,10 +21,6 @@ import upoanuncios.Municipio;
 import upoanuncios.Tipoanuncio;
 import upoanuncios.Usuario;
 
-/**
- *
- * @author Alex
- */
 public class anunciosAccion extends ActionSupport {
 
     private List<Anuncio> anuncios = new ArrayList<>();
@@ -124,16 +115,19 @@ public class anunciosAccion extends ActionSupport {
 
     public String modAnuncio() {
         try {
+//            Obtenemos la información de las entidades relacionada al anuncio a modificar
             Map session = (Map) ActionContext.getContext().get("session");
             Usuario u = (Usuario) session.get("usuario");
             Categoria c = new categoriasDAO().searchById(getFkIdCategoria());
             Tipoanuncio t = new tiposanuncioDAO().searchById(getFkIdTipoAnuncio());
             Municipio m = new municipiosDAO().searchByCodPostal(getFkCodPostal());
             Date date = new Date();
+//            Creamos el objeto anuncio
             Anuncio anuncio = new Anuncio(c, m, t, u, getTitulo(), getDescripcion(), getPrecio(), date);
             int identificador;
             identificador = getIdAnuncio();
             anuncio.setIdAnuncio(identificador);
+//            Procedemos a la modificación de los datos del anuncio
             new anunciosDAO().modAnuncio(anuncio);
             return SUCCESS;
         } catch (Exception e) {
@@ -143,6 +137,7 @@ public class anunciosAccion extends ActionSupport {
 
     public String altaAnuncio() {
         try {
+//            Obtenemos el usuario de la sesión y rellenamos los datos del anuncio
             Map session = (Map) ActionContext.getContext().get("session");
             Usuario u = (Usuario) session.get("usuario");
             Categoria c = new categoriasDAO().searchById(getFkIdCategoria());
@@ -150,6 +145,7 @@ public class anunciosAccion extends ActionSupport {
             Municipio m = new municipiosDAO().searchByCodPostal(getFkCodPostal());
             Date date = new Date();
             Anuncio anuncio = new Anuncio(c, m, t, u, getTitulo(), getDescripcion(), getPrecio(), date);
+//             Damos de alta el anuncio
             new anunciosDAO().altaAnuncio(anuncio);
             return SUCCESS;
         } catch (Exception e) {
@@ -159,6 +155,7 @@ public class anunciosAccion extends ActionSupport {
 
     public String borrarAnuncio() {
         try {
+            //Borramos el anuncio según el identificador del mismo
             new anunciosDAO().borrar(getIdAnuncio());
             return SUCCESS;
         } catch (Exception e) {

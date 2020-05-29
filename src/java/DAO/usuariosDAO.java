@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DAO;
 
 import org.hibernate.Query;
@@ -11,10 +6,6 @@ import org.hibernate.Transaction;
 import upoanuncios.Rol;
 import upoanuncios.Usuario;
 
-/**
- *
- * @author Alex
- */
 public class usuariosDAO {
 
     Session sesion = null;

@@ -8,7 +8,7 @@ import upoanuncios.Mensaje;
 
 public class mensajesDAO {
 
-    public List<Mensaje> listadoAnuncios(int id) {
+    public List<Mensaje> listadoMensajes(int id) {
         Session sesion = HibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = sesion.beginTransaction();
         Query q = sesion.createQuery("From Mensaje Where FK_idUsuarioDestino=" + id);

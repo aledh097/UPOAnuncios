@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.categoriasDAO;
@@ -16,10 +11,6 @@ import java.util.Map;
 import upoanuncios.Categoria;
 import upoanuncios.Tipoanuncio;
 
-/**
- *
- * @author Alejandro
- */
 public class tiposAnuncioAccion extends ActionSupport {
 
     private List<Tipoanuncio> tiposanuncio = new ArrayList();
@@ -61,6 +52,7 @@ public class tiposAnuncioAccion extends ActionSupport {
 
     public String execute() throws Exception {
         try {
+//            Mostramos el listado de todos los tipos de anuncios
             tiposanuncio = new tiposanuncioDAO().listadoTiposAnuncio();
             return SUCCESS;
         } catch (Exception e) {
@@ -70,6 +62,7 @@ public class tiposAnuncioAccion extends ActionSupport {
 
     public String altaTipoAnuncio() {
         try {
+//            Damos de alta un nuevo tipo de anuncio
             String nombre = getNombreTipoAnuncio();
             Tipoanuncio t = new Tipoanuncio(nombre);
             new tiposanuncioDAO().altaTipoAnuncio(t);
@@ -81,6 +74,7 @@ public class tiposAnuncioAccion extends ActionSupport {
 
     public String borrarTipoAnuncio() {
         try {
+//            Borramos un tipo de anuncio mediante su identificador
             new tiposanuncioDAO().borrar(getIdTipoAnuncio());
             return SUCCESS;
         } catch (Exception e) {
@@ -90,6 +84,7 @@ public class tiposAnuncioAccion extends ActionSupport {
 
     public String datosTipoAnuncioMod() {
         try {
+//            Guardamos el tipo de anuncio en sesión
             Map session = (Map) ActionContext.getContext().get("session");
             Tipoanuncio t = new tiposanuncioDAO().searchById(getIdTipoAnuncio());
             session.put("tipoanuncio", t);
@@ -101,6 +96,7 @@ public class tiposAnuncioAccion extends ActionSupport {
 
     public String modTipoAnuncio() {
         try {
+//            Modificamos el tipo de anuncio
             Map session = (Map) ActionContext.getContext().get("session");
             Tipoanuncio t = (Tipoanuncio) session.get("tipoanuncio");
             t.setNombreTipoAnuncio(getNombreTipoAnuncio());

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.anunciosDAO;
@@ -17,10 +12,6 @@ import upoanuncios.Categoria;
 import upoanuncios.Municipio;
 import upoanuncios.Tipoanuncio;
 
-/**
- *
- * @author Alex
- */
 public class cargarDatosAccion extends ActionSupport {
 
     private List<Categoria> categorias;
@@ -33,6 +24,8 @@ public class cargarDatosAccion extends ActionSupport {
     public String datosAnuncio() {
         try {
 
+            //Cargamos en sesión todos los datos relacionados con el anuncio
+            
             Map session = (Map) ActionContext.getContext().get("session");
 
             categorias = new categoriasDAO().listadoCategorias();

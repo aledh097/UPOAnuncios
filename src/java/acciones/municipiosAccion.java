@@ -1,14 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.municipiosDAO;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.validator.annotations.IntRangeFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.RegexFieldValidator;
 import com.opensymphony.xwork2.validator.annotations.StringLengthFieldValidator;
 import java.util.ArrayList;
@@ -16,10 +10,6 @@ import java.util.List;
 import java.util.Map;
 import upoanuncios.Municipio;
 
-/**
- *
- * @author Alex
- */
 public class municipiosAccion extends ActionSupport {
 
     private String codPostal;
@@ -40,7 +30,6 @@ public class municipiosAccion extends ActionSupport {
     }
 
     @StringLengthFieldValidator(minLength = "2", maxLength = "100", message = "El municipio debe tener al menos 2 caracteres y menos de 100 caracteres")
-//    @RegexFieldValidator(regex ="/^[a-z][a-z\\s]*$/", message = "Nombre municipio incorrecto")
     public void setNombreMunicipio(String nombreMunicipio) {
         this.nombreMunicipio = nombreMunicipio;
     }
@@ -59,6 +48,7 @@ public class municipiosAccion extends ActionSupport {
 
     public String execute() throws Exception {
         try {
+//            Listamos todos los municipios
             municipios = new municipiosDAO().listadoMunicipios();
             return SUCCESS;
         } catch (Exception e) {
@@ -68,6 +58,7 @@ public class municipiosAccion extends ActionSupport {
 
     public String datosMunicipioMod() {
         try {
+//            Guardamos el municipio en sesión
             Map session = (Map) ActionContext.getContext().get("session");
             Municipio m = new municipiosDAO().searchByCodPostal(getCodPostal());
             session.put("municipio", m);
@@ -79,6 +70,7 @@ public class municipiosAccion extends ActionSupport {
 
     public String modMunicipio() {
         try {
+//            Modificamos el municipio
             Map session = (Map) ActionContext.getContext().get("session");
             Municipio m = (Municipio) session.get("municipio");
             m.setNombreMunicipio(getNombreMunicipio());
@@ -91,6 +83,7 @@ public class municipiosAccion extends ActionSupport {
 
     public String altaMunicipio() {
         try {
+//            Damos de alta un municipio
             Municipio m = new Municipio(getCodPostal(), getNombreMunicipio());
             new municipiosDAO().altaMunicipio(m);
             return SUCCESS;
@@ -101,6 +94,7 @@ public class municipiosAccion extends ActionSupport {
     
     public String borrarMunicipio() {
         try {
+//            Borramos un municipio
             new municipiosDAO().borrar(getCodPostal());
             return SUCCESS;
         } catch (Exception e) {

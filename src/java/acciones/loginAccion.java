@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.usuariosDAO;
@@ -13,10 +8,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import java.util.Map;
 import upoanuncios.Usuario;
 
-/**
- *
- * @author Alex
- */
 public class loginAccion extends ActionSupport {
     
      private String correoElectronico;
@@ -43,16 +34,19 @@ public class loginAccion extends ActionSupport {
     public loginAccion() {
     }
     
-    public String execute() throws Exception {     
+    public String execute() throws Exception {  
+ //         Comprobamos si el usuario se ha logueado correctamente. Si no es así se devolverá un null
          Usuario usuario = new usuariosDAO().comprobarLogin(this.getCorreoElectronico(), this.getContrasenya());
         if(usuario!=null){
             Map sesion = (Map) ActionContext.getContext().getSession();
             sesion.put("usuario", usuario); 
             if(usuario.getRol().getNombreRol().equals("Admin")){
+//          Si el usuario tiene el rol de administrador creamos una variable en sesión llamada esAdmin
                 sesion.put("esAdmin",true);
             }
             return SUCCESS;
         }else{
+//            Si el objeto es de tipo null => logueo incorrecto
             Map sesion = (Map) ActionContext.getContext().getSession();
             sesion.put("logueoIncorrecto", true);
             return ERROR;

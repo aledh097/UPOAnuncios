@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package acciones;
 
 import DAO.categoriasDAO;
@@ -14,10 +9,6 @@ import java.util.List;
 import java.util.Map;
 import upoanuncios.Categoria;
 
-/**
- *
- * @author Alejandro
- */
 public class categoriasAccion extends ActionSupport {
 
     private List<Categoria> categorias = new ArrayList();
@@ -68,6 +59,7 @@ public class categoriasAccion extends ActionSupport {
 
     public String altaCategoria() {
         try {
+//            Damos de alta una categoría
             String nombre = getNombreCategoria();
             Categoria c = new Categoria(nombre);
             new categoriasDAO().altaCategoria(c);
@@ -79,6 +71,7 @@ public class categoriasAccion extends ActionSupport {
 
     public String borrarCategoria() {
         try {
+//            Borramos una categoría con el identificador del mismo
             new categoriasDAO().borrar(getIdCategoria());
             return SUCCESS;
         } catch (Exception e) {
@@ -88,6 +81,7 @@ public class categoriasAccion extends ActionSupport {
 
     public String datosCategoriaMod() {
         try {
+//            Guardamos la categoría en sesión
             Map session = (Map) ActionContext.getContext().get("session");
             Categoria c = new categoriasDAO().searchById(getIdCategoria());
             session.put("categoria", c);
