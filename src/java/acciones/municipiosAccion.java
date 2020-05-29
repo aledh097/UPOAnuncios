@@ -20,6 +20,7 @@ public class municipiosAccion extends ActionSupport {
         return codPostal;
     }
 
+//    Número entre 01000 y 52999
     @RegexFieldValidator(regex = "0[1-9][0-9]{3}|[1-4][0-9]{4}|5[0-2][0-9]{3}", message = "Código postal incorrecto")
     public void setCodPostal(String codPostal) {
         this.codPostal = codPostal;
